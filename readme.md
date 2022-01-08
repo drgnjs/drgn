@@ -1,6 +1,14 @@
 # drgn
 
-#### 💬 Supported Languages:
+- [**Node.js**]() `npm`
+- [**Python**]() `pip`
 
-- [Node.js]() `npm/yarn`
-- [Python]() `pip`
+### Setup
+
+```sh-session
+npm i -g drgn
+```
+
+```sh-session
+drgn deploy
+```

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "es2020",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true
+  }
+}

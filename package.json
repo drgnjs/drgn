@@ -2,15 +2,17 @@
   "name": "drgn",
   "version": "0.0.0-canary.0",
   "description": "📦 Deploy ANY app easily.",
-  "main": "build/index.js",
-  "types": "types/index.d.ts",
+  "exports": "./build/index.js",
+  "types": "./types/index.d.ts",
+  "bin": {
+    "drgn": "./build/bin.js"
+  },
   "scripts": {
-    "dev": "tsc -w",
-    "build": "esbuild src/index.ts --bundle --minify --platform=node --outfile=build/index.js && terser build/index.js --compress --mangle --comments false --output build/index.js",
-    "publish:patch": "npm run build && npm version patch && npm publish",
-    "publish:minor": "npm run build && npm version minor && npm publish",
-    "publish:major": "npm run build && npm version major && npm publish",
-    "test": "jest --detectOpenHandles"
+    "types": "tsc -w",
+    "build": "esbuild src/sdk/index.ts --bundle --platform=node --format=esm --outfile=build/index.js && terser build/index.js --compress --mangle --comments false --output --ecma 2021 build/index.js",
+    "build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --outfile=build/bin.js && terser build/bin.js --compress --mangle --comments false --output --ecma 2021 build/bin.js",
+    "dev": "concurrently --kill-others \"esbuild src/sdk/index.ts --bundle --watch --platform=node --format=esm --outfile=build/index.js\" \"esbuild src/cli/index.ts --bundle --watch --platform=node --format=esm --outfile=build/bin.js\"",
+    "test": "jest"
   },
   "funding": {
     "type": "individual",
@@ -27,7 +29,9 @@
     "easy-to-use",
     "local",
     "cloud",
-    "automation"
+    "automation",
+    "ssh",
+    "cli"
   ],
   "author": "Azury <hello@azury.dev> (https://azury.dev)",
   "license": "Apache-2.0",
@@ -41,7 +45,9 @@
     "@types/yargs": "^17.0.8",
     "boxen": "^6.2.1",
     "chalk": "^5.0.0",
+    "concurrently": "^7.0.0",
     "esbuild": "^0.14.10",
+    "jest": "^27.4.7",
     "node-fetch": "^3.1.0",
     "node-ssh": "^12.0.2",
     "terser": "^5.10.0",

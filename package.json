@@ -2,18 +2,18 @@
   "name": "drgn",
   "version": "1.0.0-canary.0",
   "description": "📦 Deploy ANY app easily.",
-  "types": "./types/index.d.ts",
+  "types": "types/index.d.ts",
   "bin": {
-    "drgn": "./build/bin.js"
+    "drgn": "build/cli.js"
   },
   "exports": {
-    ".": "./build/index.js"
+    ".": "./build/sdk.js"
   },
   "scripts": {
     "types": "tsc -w",
-    "build": "esbuild src/sdk/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/index.js && terser build/index.js --compress --mangle --comments false --output --ecma 2021 build/index.js",
-    "build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/bin.js && terser build/bin.js --compress --mangle --comments false --output --ecma 2021 build/bin.js",
-    "dev": "concurrently --kill-others \"esbuild src/sdk/index.ts --bundle --watch --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/index.js\" \"esbuild src/cli/index.ts --bundle --watch --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --platform=node --format=esm --outfile=build/bin.js\"",
+    "build": "esbuild src/packages/sdk/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js && terser build/sdk.js --compress --mangle --comments false --output --ecma 2021 build/sdk.js",
+    "build:cli": "esbuild src/packages/cli/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/cli.js && terser build/cli.js --compress --mangle --comments false --output --ecma 2021 build/cli.js",
+    "dev": "concurrently --kill-others \"esbuild src/packages/sdk/index.ts --bundle --watch --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js\" \"esbuild src/packages/cli/index.ts --bundle --watch --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --platform=node --format=esm --outfile=build/cli.js\"",
     "publish:patch": "npm run build && npm run build:cli && npm version patch && npm publish",
     "publish:minor": "npm run build && npm run build:cli && npm version minor && npm publish",
     "publish:major": "npm run build && npm run build:cli && npm version major && npm publish",

@@ -25,3 +25,29 @@ npm i -g drgn
 ```sh-session
 drgn deploy
 ```
+
+```json
+{
+  "prepare": "npm run build",
+  "memoryLimit": 100,
+  "credentials": {
+    "host": "127.0.0.1",
+    "user": "admin",
+    "password": "secret123"
+  }
+}
+```
+
+#### Use a .env
+
+Put your secrets inside `$$`'s
+
+```json
+"host": "$$host$$"
+```
+
+#### Your .env
+
+```env
+host = "127.0.0.1"
+```

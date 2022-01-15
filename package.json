@@ -11,13 +11,13 @@
   },
   "scripts": {
     "types": "tsc -w",
-    "build": "esbuild src/packages/sdk/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js && terser build/sdk.js --compress --mangle --comments false --output --ecma 2021 build/sdk.js",
-    "build:cli": "esbuild src/packages/cli/index.ts --bundle --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/cli.js && terser build/cli.js --compress --mangle --comments false --output --ecma 2021 build/cli.js",
-    "dev": "concurrently --kill-others \"esbuild src/packages/sdk/index.ts --bundle --watch --platform=node --format=esm --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js\" \"esbuild src/packages/cli/index.ts --bundle --watch --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --platform=node --format=esm --outfile=build/cli.js\"",
+    "build": "esbuild src/packages/sdk/index.ts --bundle --platform=node --format=esm --external:fs-extra --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js && terser build/sdk.js --compress --mangle --comments false --output --ecma 2021 build/sdk.js",
+    "build:cli": "esbuild src/packages/cli/index.ts --bundle --platform=node --format=esm --external:fs-extra --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/cli.js && terser build/cli.js --compress --mangle --comments false --output --ecma 2021 build/cli.js",
     "publish:patch": "npm run build && npm run build:cli && npm version patch && npm publish",
     "publish:minor": "npm run build && npm run build:cli && npm version minor && npm publish",
     "publish:major": "npm run build && npm run build:cli && npm version major && npm publish",
-    "test": "jest"
+    "test": "jest",
+    "dev": "concurrently --kill-others \"esbuild src/packages/sdk/index.ts --bundle --watch --platform=node --format=esm --external:fs-extra --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/sdk.js\" \"esbuild src/packages/cli/index.ts --bundle --watch --platform=node --format=esm --external:fs-extra --external:log-update --external:chalk --external:boxen --external:node-fetch --external:node-ssh --external:yargs --outfile=build/cli.js\""
   },
   "funding": {
     "type": "individual",
@@ -47,18 +47,21 @@
   "dependencies": {
     "boxen": "^6.2.1",
     "chalk": "^5.0.0",
+    "fs-extra": "^10.0.0",
     "log-update": "^5.0.0",
     "node-fetch": "^3.1.0",
     "node-ssh": "^12.0.2",
     "yargs": "^17.3.1"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^17.0.8",
     "@types/ssh2": "^0.5.50",
     "@types/yargs": "^17.0.8",
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.10",
     "jest": "^27.4.7",
+    "nanoid": "^3.1.32",
     "terser": "^5.10.0",
     "typescript": "^4.5.4"
   },

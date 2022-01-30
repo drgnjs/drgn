@@ -2,7 +2,7 @@
   "name": "drgn",
   "productName": "drgn",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "📂 All-in-One SFTP Client",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",

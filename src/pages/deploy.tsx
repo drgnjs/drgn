@@ -1,12 +1,10 @@
 import React from 'react'
 import Base from '../components/Base'
 
-const Deploy = () => {
+export default () => {
   return (
     <Base>
       Hello World
     </Base>
   )
 }
-
-export default Deploy

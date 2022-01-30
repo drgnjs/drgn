@@ -1,0 +1,66 @@
+@import './theme';
+
+.navigation {
+  width: 80px;
+  height: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 5px;
+  padding: 20px 0;
+  background: $surfaceSecondary;
+}
+
+%item {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    background: $surfaceTertiary;
+
+    i {
+      color: $text;
+    }
+  }
+
+  &:active {
+    background: $surfaceQuartiary;
+
+    i {
+      color: $heading;
+    }
+  }
+
+  i {
+    font-size: 26px;
+    opacity: .99;
+    transition: .3s;
+  }
+}
+
+.item {
+  @extend %item;
+
+  i {
+    color: $textDark;
+  }
+}
+
+.activeItem {
+  @extend %item;
+  background: $surfaceQuartiary;
+
+  i {
+    color: $heading;
+  }
+}

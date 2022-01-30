@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "es2020",
-    "rootDir": "src",
+    "allowJs": true,
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "jsx": "react",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "declaration": true,
-    "declarationDir": "types",
-    "emitDeclarationOnly": true,
-    "skipLibCheck": true
-  }
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["src/**/*"]
 }

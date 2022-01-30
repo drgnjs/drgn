@@ -10,7 +10,11 @@ const createWindow = () => {
     width: 800,
     center: true,
     frame: false,
-    title: 'drgn'
+    title: 'drgn',
+    webPreferences: {
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true
+    }
   })
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)

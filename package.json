@@ -88,6 +88,7 @@
   "dependencies": {
     "@fontsource/poppins": "^4.5.1",
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@tippyjs/react": "^4.2.6",
     "dayjs": "^1.10.7",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.1",

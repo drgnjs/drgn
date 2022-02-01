@@ -1,12 +1,11 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styles from '../styles/Base.module.scss'
+import { Outlet } from 'react-router-dom'
 
-const Base = ({ children }: {
-  children: ReactNode
-}) => {
+const Base = () => {
   return (
     <div className={styles.base}>
-      {children}
+      <Outlet />
     </div>
   )
 }

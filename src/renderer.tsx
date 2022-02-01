@@ -4,7 +4,6 @@ import Navigation from './components/Navigation'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import OuterNavigation from './components/OuterNavigation'
 import styles from './styles/App.module.scss'
-import Home from './pages'
 import Deploy from './pages/deploy'
 import '@fontsource/poppins'
 import '@fontsource/poppins/500.css'
@@ -15,6 +14,7 @@ import '@fontsource/poppins/900.css'
 import 'material-icons/iconfont/material-icons.css'
 import '@fortawesome/fontawesome-free/css/brands.css'
 import './styles/_global.scss'
+import Base from './components/Base'
 
 (() => {
   ReactDOM.render(
@@ -25,8 +25,10 @@ import './styles/_global.scss'
         <Navigation />
       
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='deploy' element={<Deploy />} />
+          <Route element={<Base />}>
+            <Route path='/' element={<></>} />
+            <Route path='deploy' element={<Deploy />} />
+          </Route>
         </Routes>
       </div>
     </HashRouter>

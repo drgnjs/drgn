@@ -10,4 +10,8 @@
 
 ### Download
 
-📥 [**Get drgn**](https://drgnjs.com/download)
+📥 [**Get drgn**](https://drgnjs.com)
+
+https://azury.dev/api/drgn/download?platform=win&version=latest
+https://azury.dev/api/drgn/download?platform=linux&version=latest
+https://azury.dev/api/drgn/download?platform=osx&version=latest

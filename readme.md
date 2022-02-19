@@ -1,17 +1,14 @@
-<h1 align="center">
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-  ⠀drgn⠀
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-  <img src="https://cdn.jsdelivr.net/npm/@azury/cdn/dist/fc2dc43e8c49fa16.svg" width="26px" />
-</h1>
+<h1 align="center">drgn.js</h1>
+
+### Features
+
+- 🔧 ***manage your servers***
+- 1️⃣ ***one-click installable applications***
+- 👀 ***automatic restarts***
+- ⚙️ ***simple configuration***
+- 🎨 ***modern design***
+- 🔒 ***secure by default***
 
 ### Download
 
-📥 [**Get drgn**](https://drgnjs.com)
-
-https://azury.dev/api/services/drgn/download?platform=win&version=latest  
-https://azury.dev/api/services/drgn/download?platform=linux&version=latest  
-https://azury.dev/api/services/drgn/download?platform=osx&version=latest
+[**Windows**](https://drgnjs.com/download?platform=windows) ◈ [**Linux**](https://drgnjs.com/download?platform=linux) ◈ [**Mac**](https://drgnjs.com/download?platform=mac)

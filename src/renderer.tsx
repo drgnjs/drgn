@@ -15,6 +15,7 @@ import 'material-icons/iconfont/material-icons.css'
 import '@fortawesome/fontawesome-free/css/brands.css'
 import './styles/_global.scss'
 import Base from './components/Base'
+import Files from './pages/files'
 
 (() => {
   ReactDOM.render(
@@ -27,6 +28,7 @@ import Base from './components/Base'
         <Routes>
           <Route element={<Base />}>
             <Route path='/' element={<></>} />
+            <Route path='files' element={<Files />} />
             <Route path='deploy' element={<Deploy />} />
           </Route>
         </Routes>

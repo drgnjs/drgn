@@ -6,8 +6,8 @@ if (require('electron-squirrel-startup')) app.quit()
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    height: 800,
+    width: 1200,
     center: true,
     frame: false,
     title: 'drgn',

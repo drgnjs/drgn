@@ -30,5 +30,18 @@ module.exports = [
         transpileOnly: true
       }
     }
+  },
+  {
+    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+    use: {
+      loader: 'url-loader',
+      options: {
+        limit: 20 * 1024, // 20Kb
+        outputPath: 'assets',
+        publicPath: '../assets',
+        name: '[name]-[hash:6].[ext]',
+        esModule: false
+      }
+    }
   }
 ]

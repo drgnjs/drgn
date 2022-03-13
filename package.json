@@ -1,104 +1,41 @@
 {
   "name": "drgn",
-  "productName": "drgn",
   "version": "0.0.0",
-  "description": "All-in-One SSH Client",
-  "main": ".webpack/main",
+  "private": true,
+  "main": "out/api.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
-  },
-  "keywords": [],
-  "author": {
-    "name": "Azury",
-    "email": "hello@azury.dev"
-  },
-  "license": "Apache-2.0",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "authors": "Azury",
-            "name": "drgn",
-            "description": "All-in-One SSH Client"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {
-            "options": {
-              "maintainer": "Azury",
-              "homepage": "https://drgnjs.com"
-            }
-          }
-        }
-      ],
-      "plugins": [
-        [
-          "@electron-forge/plugin-webpack",
-          {
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.tsx",
-                  "name": "main_window"
-                }
-              ]
-            }
-          }
-        ]
-      ]
-    }
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "@electron-forge/plugin-webpack": "^6.0.0-beta.63",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "@vercel/webpack-asset-relocator-loader": "^1.7.0",
-    "copy-webpack-plugin": "^10.2.4",
-    "css-loader": "^6.5.1",
-    "electron": "16.0.7",
-    "eslint": "^8.7.0",
-    "eslint-plugin-import": "^2.25.4",
-    "file-loader": "^6.2.0",
-    "fork-ts-checker-webpack-plugin": "^6.5.0",
-    "node-loader": "^2.0.0",
-    "sass-loader": "^12.4.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.2.6",
-    "typescript": "~4.5.4",
-    "url-loader": "^4.1.1"
+    "dev": "concurrently --kill-others \"npm run dev:api\" \"npm run dev:pages\" \"nw src/\"",
+    "dev:pages": "next dev",
+    "dev:api": "concurrently --kill-others \"esbuild src/api/index.ts --bundle --watch --minify --platform=node --outfile=out/api.js\" \"nodemon out/api.js\"",
+    "build": "npm run export && esbuild src/api/index.ts --bundle --minify --platform=node --outfile=out/api.js",
+    "export": "next build && next export",
+    "package": "nwbuild --platforms win32,win64,osx64,linux32,linux64 --buildDir packages/ src/"
   },
   "dependencies": {
-    "@fontsource/poppins": "^4.5.1",
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fontsource/poppins": "^4.5.3",
+    "@fortawesome/fontawesome-free": "^6.0.0",
     "@tippyjs/react": "^4.2.6",
-    "dayjs": "^1.10.7",
-    "electron-squirrel-startup": "^1.0.0",
-    "electron-store": "^8.0.1",
-    "fs-extra": "^10.0.0",
-    "material-icons": "^1.10.6",
+    "dayjs": "^1.10.8",
+    "fastify": "^3.27.4",
+    "fs-extra": "^10.0.1",
+    "material-icons": "^1.10.8",
+    "next": "12.1.0",
     "node-fetch": "^2.6.7",
     "node-ssh": "^12.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "^6.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.21",
+    "@types/react": "17.0.40",
+    "concurrently": "^7.0.0",
+    "esbuild": "^0.14.25",
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0",
+    "nodemon": "^2.0.15",
+    "nw": "^0.62.0",
+    "nw-builder": "^3.5.7",
+    "typescript": "4.6.2"
   }
 }

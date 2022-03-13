@@ -1,0 +1,21 @@
+{
+  "name": "drgn",
+  "version": "0.0.0",
+  "private": true,
+  "main": "out/index.html",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run dev:api\" \"npm run dev:pages\"",
+    "dev:pages": "next dev",
+    "dev:api": "concurrently --kill-others \"esbuild src/api/index.ts --bundle --watch --minify --platform=node --outfile=out/api.js\" \"nodemon out/api.js\"",
+    "build": "npm run export && esbuild src/api/index.ts --bundle --minify --platform=node --outfile=out/api.js",
+    "export": "next build && next export",
+    "package": "nwbuild --platforms win32,win64,osx64,linux32,linux64 --buildDir packages/ src/",
+    "start": "nw src/"
+  },
+  "window": {
+    "title": "drgn",
+    "icon": "assets/icon.png",
+    "width": 1200,
+    "height": 800
+  }
+}

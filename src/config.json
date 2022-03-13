@@ -1,4 +1,0 @@
-{
-  "version": "version",
-  "protocols": ["FTP", "SFTP", "S3"]
-}

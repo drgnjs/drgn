@@ -1,8 +1,7 @@
 {
   "name": "azury",
   "scripts": {
-    "pre:dev": "concurrently \"npm run compile\" \"npm run serve\"",
-    "dev": "tauri dev",
+    "dev": "concurrently \"npm run compile\" \"npm run serve\" \"tauri dev\"",
     "serve": "live-server dist --port=5555 --no-browser",
     "compile": "node scripts/build.mjs",
     "build": "tauri build"

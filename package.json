@@ -1,10 +1,10 @@
 {
-  "name": "azury",
+  "name": "drgn",
   "scripts": {
-    "dev": "concurrently \"npm run compile\" \"npm run serve\" \"tauri dev\"",
+    "dev": "concurrently \"npm run build\" \"npm run serve\" \"tauri dev\"",
     "serve": "live-server dist --port=5555 --no-browser",
-    "compile": "node scripts/build.mjs",
-    "build": "tauri build"
+    "build": "node scripts/build.mjs",
+    "bundle": "tauri build"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.8",

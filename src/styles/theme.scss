@@ -1,0 +1,57 @@
+// font
+
+$font: 'Poppins', sans-serif;
+
+// color scheme
+
+$heading: #ffffff;
+$text: #caccce;
+$textDark: #8d8e91;
+$textDarker: #646568;
+$textGreen: #66c79b;
+$textOrange: #fbbb4b;
+$textRed: #f26e71;
+$textRedHover: #f48a8c;
+$textBlurple: #7a84f5;
+
+$blurple: #5865f3;
+$blurpleSecondary: #6774ff;
+$blurpleTertiary: #4956e4;
+
+$gray: #2b2f3b;
+$graySecondary: #414758;
+$grayTertiary: #23262f;
+
+$surfaceDark: #09090c;
+$surface: #0b0c0f;
+$surfaceSecondary: #0f1115;
+$surfaceTertiary: #14151a;
+$surfaceQuartiary: #181a20;
+
+$overlay: #1e2129;
+$overlaySecondary: #23262f;
+$overlayTertiary: #272a35;
+
+$surfaceHover: #0f1115;
+$surfaceActive: #14151a;
+
+$green: #43b683;
+$orange: #faa819;
+$red: #ed4043;
+
+$gold: #cfa76b;
+$silver: #a7abad;
+$bronze: #ebb487;
+
+$shadowBottom: 0px 4px 4px rgba(0, 0, 0, .16);
+$shadowAll: 0 8px 15px rgba(0, 0, 0, .2);
+
+// transition
+
+$transition: .256s;
+
+// mixins
+
+@mixin background($image, $color, $verticalAlignment, $horizontalAlignment, $scaling) {
+  background: url('../assets/#{$image}') $color no-repeat $verticalAlignment $horizontalAlignment / $scaling;
+}

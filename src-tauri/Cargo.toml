@@ -1,9 +1,9 @@
 [package]
-name = "azury"
-version = "1.0.0"
-description = "Share files the simple way."
+name = "drgn"
+version = "0.1.0"
+description = "A better SSH Client."
 authors = ["Samuel Kopp"]
-default-run = "azury"
+default-run = "drgn"
 edition = "2021"
 rust-version = "1.57"
 

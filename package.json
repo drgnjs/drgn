@@ -1,9 +1,10 @@
 {
   "name": "drgn",
   "scripts": {
-    "dev": "concurrently \"npm run build\" \"npm run serve\" \"tauri dev\"",
+    "dev": "concurrently \"npm run build:watch\" \"npm run serve\" \"tauri dev\"",
     "serve": "live-server dist --port=5555 --no-browser",
     "build": "node scripts/build.mjs",
+    "build:watch": "node scripts/watch.mjs",
     "bundle": "tauri build"
   },
   "dependencies": {

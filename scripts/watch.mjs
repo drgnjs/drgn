@@ -6,6 +6,7 @@ import stylePlugin from 'esbuild-style-plugin'
     entryPoints: ['src/index.tsx'],
     minify: true,
     bundle: true,
+    watch: true,
     loader: {
       '.ts': 'tsx'
     },

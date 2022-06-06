@@ -23,7 +23,9 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/icon.ico"
+        "icons/icon.ico",
+        "icons/icon.png",
+        "icons/icon.icns"
       ],
       "identifier": "drgn",
       "longDescription": "A better SSH Client.",

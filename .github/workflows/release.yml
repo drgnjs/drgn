@@ -34,6 +34,7 @@ jobs:
         run: npm ci && npm run build
 
       - name: Extract Changelog
+        if: matrix.platform != 'windows-latest'
         run: |
           CHANGELOG=$(awk -v ver=v$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
           echo "CHANGELOG<<EOF" >> $GITHUB_ENV

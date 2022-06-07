@@ -27,4 +27,4 @@ releaseJson.platforms.linux.url = `https://github.com/drgnjs/drgn/releases/downl
 releaseJson.platforms.win64.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_${latestRelease.tag_name.replace('v', '')}_x64_en-US.msi.zip`
 
 // update json file
-await writeFile('release.json', JSON.stringify(releaseJson, null, 2))
+await writeFile('release.json', JSON.stringify(releaseJson, null, 2) + '\n')

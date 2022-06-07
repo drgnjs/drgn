@@ -3,12 +3,12 @@
   "build": {
     "beforeBuildCommand": "",
     "beforeDevCommand": "",
-    "devPath": "http://localhost:5555",
+    "devPath": "http://localhost:3000",
     "distDir": "../dist"
   },
   "package": {
     "productName": "drgn",
-    "version": "0.1.0"
+    "version": "0.5.0"
   },
   "tauri": {
     "allowlist": {
@@ -49,7 +49,15 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "dialog": true,
+      "windows": {
+        "installMode": "quiet"
+      },
+      "endpoints": [
+        "https://api.drgnjs.com/update"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEU1NkE1RjYxRjREMDZCQkUKUldTK2E5RDBZVjlxNVNhYTNEOFF4VC9wRDkzVUlicDJYallhM2Q3dFROS1hSUHdFWTZQSG1IV2EK"
     },
     "windows": [
       {

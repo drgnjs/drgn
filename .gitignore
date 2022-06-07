@@ -1,5 +1,5 @@
 src-tauri/target
 WixTools
-dist/**
-!dist/index.html
+dist
 node_modules
+~/.tauri

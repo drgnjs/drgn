@@ -19,6 +19,9 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "incremental": true,
-    "newLine": "crlf"
+    "newLine": "crlf",
+    "types": [
+      "vite/client"
+    ]
   }
 }

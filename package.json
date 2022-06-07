@@ -1,11 +1,37 @@
 {
   "name": "drgn",
-  "license": "Apache-2.0",
+  "version": "0.6.0",
+  "description": "A better SSH Client",
   "scripts": {
     "dev": "concurrently \"vite dev\" \"tauri dev\"",
     "build": "vite build",
     "bundle": "tauri build"
   },
+  "funding": {
+    "type": "individual",
+    "url": "https://ko-fi.com/azury"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drgnjs/drgn.git"
+  },
+  "keywords": [
+    "ssh",
+    "ssh-client",
+    "desktop",
+    "drgn",
+    "typescript",
+    "cross-platform",
+    "windows",
+    "linux",
+    "mac"
+  ],
+  "author": "Samuel Kopp <hello@azury.dev> (https://azury.dev)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/drgnjs/drgn/issues"
+  },
+  "homepage": "https://github.com/drgnjs/drgn#readme",
   "dependencies": {
     "@fontsource/poppins": "^4.5.8",
     "@fortawesome/fontawesome-free": "^6.1.1",

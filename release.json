@@ -1,19 +1,19 @@
 {
-  "name": "invalid",
-  "notes": "test",
-  "pub_date": "some time",
+  "name": "v0.5.0",
+  "notes": "Waiting for publication...",
+  "pub_date": "2022-06-07T19:07:47Z",
   "platforms": {
     "darwin": {
-      "signature": "something",
-      "url": "idk"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVp2UzlNQ3BDSGkyWEI1Sm9oMGpIM1Y2QnBDeDhBRWV6OHA2RjJTWHpQUUJUNVZYazV1YWpBQlZiRUJYcTUvOGpwd29OTXNoWkFDaHRWT0pGdGVsOGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NjI2OTI5CWZpbGU6L1VzZXJzL3J1bm5lci93b3JrL2RyZ24vZHJnbi9zcmMtdGF1cmkvdGFyZ2V0L3JlbGVhc2UvYnVuZGxlL21hY29zL2RyZ24uYXBwLnRhci5negp3UE1xY0s1YklGcUp6NSs1T1pLYTBDdDNLMnFmZmEzRVRndm9PM0FsZ3lkanViVmV4dXU3NzV1TUgweEdFY1JRYVU2Njl1SnduR3BDTzhjUHNPWmZCQT09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.5.0/drgn.app.tar.gz"
     },
     "linux": {
-      "signature": "something",
-      "url": "idk"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVg2dzV0enc0cUpsK3F0bTIxNlhhcHd2dkh3akJ4OFZqVmJVY21zMktZS3FsandQOGtoelk5c09LYUVOdklleGZZdXJybi9jUTg0bXVFYUprMzhYR2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NjI3MDA2CWZpbGU6L2hvbWUvcnVubmVyL3dvcmsvZHJnbi9kcmduL3NyYy10YXVyaS90YXJnZXQvcmVsZWFzZS9idW5kbGUvYXBwaW1hZ2UvZHJnbl8wLjUuMF9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKUUJVaE9JTTZvcUpEVDllYzVmSnRCeWI5dVlaVCtmV1NRekRqT0t6cDZaeXdpcDJuTFVPT0pKL3RiZVk1Z1pITVl0Mlc2a0hMSExxZUY0UnFWRVI3QlE9PQo=",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.5.0/drgn_0.5.0_amd64.AppImage.tar.gz"
     },
     "win64": {
-      "signature": "something",
-      "url": "idk"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVdwaEV5Z1lnY1dZQWc5aCthZ2VTa0k1aW5zL1pYdDlaZmwxbDVpcjNZY1VDMFBYSndhSHJqRDVpVW9JRmdFUjM5SWhYelZ0YTQ1eVNwd3NOTTRDRndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NjI3MDk1CWZpbGU6RDpcYVxkcmduXGRyZ25cc3JjLXRhdXJpXHRhcmdldFxyZWxlYXNlXGJ1bmRsZS9tc2kvZHJnbl8wLjUuMF94NjRfZW4tVVMubXNpLnppcAp1NzFzcWJHMllnSU9iaFdGNE1GQWhPL2FtTXF5VXZkRjQyTlI0YnoxRTg5QnQ4WUE4M3NBQWJNWVl4Tm1icjh0aHNmNFdHWGsyNmFMd0tvMjlYRGpEZz09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.5.0/drgn_0.5.0_x64_en-US.msi.zip"
     }
   }
 }

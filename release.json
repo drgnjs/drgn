@@ -1,0 +1,19 @@
+{
+  "name": "invalid",
+  "notes": "test",
+  "pub_date": "some time",
+  "platforms": {
+    "darwin": {
+      "signature": "something",
+      "url": "idk"
+    },
+    "linux": {
+      "signature": "something",
+      "url": "idk"
+    },
+    "win64": {
+      "signature": "something",
+      "url": "idk"
+    }
+  }
+}

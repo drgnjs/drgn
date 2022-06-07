@@ -3,6 +3,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "concurrently \"vite dev\" \"tauri dev\"",
+    "build": "vite build",
     "bundle": "tauri build"
   },
   "dependencies": {

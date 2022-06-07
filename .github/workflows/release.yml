@@ -33,6 +33,13 @@ jobs:
       - name: Install Dependencies and Build Frontend
         run: npm ci && npm run build
 
+      - name: Extract Changelog
+        run: |
+          CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
+          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+          echo "$CHANGELOG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
       - name: Build the App
         uses: tauri-apps/tauri-action@v0
 
@@ -43,6 +50,6 @@ jobs:
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
-          releaseBody: Waiting for publication...
-          releaseDraft: true
+          releaseBody: ${{ env.CHANGELOG }}
+          releaseDraft: false
           prerelease: false

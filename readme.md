@@ -3,7 +3,7 @@
 **A futuristic SSH Client for Windows, Linux, and Mac.**
 
 - ⚡ **Efficient** - takes less storage and memory.
-- ☁️ **Synchronized**` - has built-in cloud-based synchronization.
+- ☁️ **Synchronized** - has built-in cloud-based synchronization.
 - 🤝 **Trustworthy** - is fully open-source.
 - 🎨 **Customizable** - has support for custom themes and plugins.
 - 🔒 **Secure** - has support for two factor authentication.

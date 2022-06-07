@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "drgn",
-    "version": "0.5.0"
+    "version": "../package.json"
   },
   "tauri": {
     "allowlist": {
@@ -18,10 +18,6 @@
       "active": true,
       "category": "DeveloperTool",
       "copyright": "Samuel Kopp",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
       "icon": [
         "icons/icon.ico",
         "icons/icon.png",
@@ -31,8 +27,7 @@
       "longDescription": "A better SSH Client.",
       "macOS": {
         "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
+        "exceptionDomain": "api.drgnjs.com",
         "providerShortName": null,
         "signingIdentity": null
       },
@@ -41,8 +36,7 @@
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "digestAlgorithm": "sha256"
       }
     },
     "security": {
@@ -65,7 +59,7 @@
         "height": 600,
         "resizable": true,
         "title": "drgn",
-        "width": 800,
+        "width": 1000,
         "decorations": true
       }
     ]

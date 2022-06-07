@@ -35,7 +35,7 @@ jobs:
 
       - name: Extract Changelog
         run: |
-          CHANGELOG=$(awk -v ver=v$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' CHANGELOG.md)
+          CHANGELOG=$(awk -v ver=v$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
           echo "CHANGELOG<<EOF" >> $GITHUB_ENV
           echo "$CHANGELOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV

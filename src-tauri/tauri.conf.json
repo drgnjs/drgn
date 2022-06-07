@@ -55,7 +55,7 @@
         "installMode": "quiet"
       },
       "endpoints": [
-        "https://api.drgnjs.com/update"
+        "https://raw.githubusercontent.com/drgnjs/drgn/dev/release.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEU1NkE1RjYxRjREMDZCQkUKUldTK2E5RDBZVjlxNVNhYTNEOFF4VC9wRDkzVUlicDJYallhM2Q3dFROS1hSUHdFWTZQSG1IV2EK"
     },

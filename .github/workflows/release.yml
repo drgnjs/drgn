@@ -13,13 +13,20 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
+
+      - name: Grab Version
+        run: |
+          VERSION = $(cat version.txt)
+          echo "VERSION<<EOF" >> $GITHUB_ENV
+          echo "$VERSION" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
       
       - name: Grab Changelog
-          run: |
-            CHANGELOG = $(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
-            echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-            echo "$CHANGELOG" >> $GITHUB_ENV
-            echo "EOF" >> $GITHUB_ENV
+        run: |
+          CHANGELOG = $(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
+          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+          echo "$CHANGELOG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -27,8 +34,8 @@ jobs:
         with:
           script: |
             github.rest.repos.createRelease({
-              tag_name: 'v0.6.1',
-              name: 'v0.6.1',
+              tag_name: ${{ env.VERSION }},
+              name: ${{ env.VERSION }},
               body: ${{ env.CHANGELOG }},
               draft: true,
               prerelease: false

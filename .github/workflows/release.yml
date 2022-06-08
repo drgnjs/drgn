@@ -2,16 +2,13 @@ name: 'Release'
 
 on:
   push:
-    branches: [
-      'dev'
-      # 'current'
-    ]
+    branches: [ 'dev' ]
 
 jobs:
-  create-release:
+  create_release:
     runs-on: 'ubuntu-latest'
     outputs:
-      releaseId: ${{ steps.create_release.outputs.test }}
+      releaseId: ${{ steps.create_release.outputs }}
 
     steps:
       - name: 'Git Checkout'
@@ -24,12 +21,12 @@ jobs:
             echo "$VERSION" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
       
-      - name: 'Grab Changelog'
-          run: |
-            CHANGELOG = $(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
-            echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-            echo "$CHANGELOG" >> $GITHUB_ENV
-            echo "EOF" >> $GITHUB_ENV
+      #- name: 'Grab Changelog'
+          #run: |
+            #CHANGELOG = $(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
+            #echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+            #echo "$CHANGELOG" >> $GITHUB_ENV
+            #echo "EOF" >> $GITHUB_ENV
 
       - name: 'Create Release'
         id: 'create_release'
@@ -39,10 +36,16 @@ jobs:
             github.rest.repos.createRelease({
               tag_name: ${{ env.VERSION }},
               name: ${{ env.VERSION }},
-              body: ${{ env.CHANGELOG }},
+              body: 'Something',
               draft: true,
               prerelease: false
             })
+
+  b1:
+    runs-on: 'ubuntu-latest'
+    needs: 'create_release'
+    steps:
+      - run: echo ${{needs.create_release.releaseId}}
 
 #  build:
     

@@ -9,7 +9,7 @@ const releaseJson = JSON.parse(await readFile('release.json', { encoding: 'utf-8
 // update release
 releaseJson.name = process.env.VERSION
 releaseJson.notes = process.env.CHANGELOG
-releaseJson.pub_date = process.env.PUBLISHED_AT
+releaseJson.pub_date = process.env.PUBLISHED_AT.replaceAll('\"', '')
 
 // update signatures
 const macSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn.app.tar.gz.sig`)).text()

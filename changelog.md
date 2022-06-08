@@ -2,7 +2,7 @@
 
 Some dummy text
 
-## v0.7.3
+## v0.7.4
 **A futuristic SSH Client for Windows, Linux, and Mac.**
 
 - ⚡ **Efficient** - takes less storage and memory.

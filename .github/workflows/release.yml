@@ -45,33 +45,6 @@ jobs:
             
             return data.id
 
-  
-
-  publish-release:
-    runs-on: ubuntu-latest
-    needs: create-release
-
-    outputs:
-      published_at: ${{ steps.publish-release.outputs.result }}
-    
-    steps:
-      - name: Publish Release
-        id: publish-release
-        uses: actions/github-script@v6
-        env:
-          RELEASE_ID: ${{ needs.create-release.outputs.release_id }}
-        with:
-          script: |
-            const { data } = await github.rest.repos.updateRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: process.env.RELEASE_ID,
-              draft: false,
-              prerelease: false
-            })
-
-            return data.published_at
-
   build:
     strategy:
       fail-fast: false
@@ -105,6 +78,8 @@ jobs:
         run: npm ci
 
       - name: Set Version
+        env:
+          VERSION: ${{ steps.create-release.outputs.version }}
         run: node scripts/setVersion.js
       
       - name: Build Web
@@ -116,6 +91,31 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           releaseId: ${{ needs.create-release.outputs.release_id }}
+
+  publish-release:
+    runs-on: ubuntu-latest
+    needs: create-release
+
+    outputs:
+      published_at: ${{ steps.publish-release.outputs.result }}
+    
+    steps:
+      - name: Publish Release
+        id: publish-release
+        uses: actions/github-script@v6
+        env:
+          RELEASE_ID: ${{ needs.create-release.outputs.release_id }}
+        with:
+          script: |
+            const { data } = await github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.RELEASE_ID,
+              draft: false,
+              prerelease: false
+            })
+
+            return data.published_at
 
   publish-update:
     runs-on: ubuntu-latest

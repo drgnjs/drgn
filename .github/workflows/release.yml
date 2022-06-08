@@ -46,13 +46,6 @@ jobs:
             
             return data
 
-      - name: Log
-        env:
-          data: ${{ steps.create_release.outputs.result }}
-        uses: actions/github-script@v6
-        with:
-          script: console.log(process.env.data)
-
 
   publish_release:
     runs-on: ubuntu-latest
@@ -66,6 +59,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            console.log(process.env.RELEASE_ID)
+
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,

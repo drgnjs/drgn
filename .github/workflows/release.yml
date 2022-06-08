@@ -19,11 +19,11 @@ jobs:
 
       - name: Grab Version
         run: |
-          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+          echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
       
       - name: Grab Changelog
         run: |
-          echo "CHANGELOG=$(awk -v ver=$(node -p "require('./package.json').version") '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)" " >> $GITHUB_ENV
+          echo "CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)" " >> $GITHUB_ENV
 
       - name: Create Release
         id: create-release

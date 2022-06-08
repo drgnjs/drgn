@@ -81,6 +81,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
 
+      - run: git pull
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:

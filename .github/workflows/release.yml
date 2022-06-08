@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      release: ${{ steps.create_release.outputs.result }}
+      releaseId: ${{ steps.create_release.outputs.result.id }}
     
     steps:
       - name: Git Checkout
@@ -55,16 +55,14 @@ jobs:
     steps:
       - name: Publish Release
         env:
-          RELEASE_ID: ${{needs.create_release.outputs.release.id}}
+          releaseId: ${{needs.create_release.outputs.releaseId}}
         uses: actions/github-script@v6
         with:
           script: |
-            console.log(process.env.RELEASE_ID)
-
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: process.env.RELEASE_ID,
+              release_id: process.env.releaseId,
               draft: false,
               prerelease: false
             })

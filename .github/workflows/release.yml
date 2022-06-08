@@ -54,6 +54,8 @@ jobs:
         with:
           script: |
             github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               release_id: process.env.releaseId,
               draft: false,
               prerelease: false

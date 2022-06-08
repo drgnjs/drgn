@@ -1,15 +1,17 @@
-name: Release
+name: 'Release'
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ 'dev' ]
 
 jobs:
-  create_release:
+  create-release:
     runs-on: ubuntu-latest
 
     outputs:
-      releaseId: ${{ steps.create_release.outputs.result }}
+      version: ${{ env.VERSION }}
+      changelog: ${{ env.CHANGELOG }}
+      release_id: ${{ steps.create-release.outputs.result }}
     
     steps:
       - name: Git Checkout
@@ -17,20 +19,14 @@ jobs:
 
       - name: Grab Version
         run: |
-          VERSION=$(cat version.txt)
-          echo "VERSION<<EOF" >> $GITHUB_ENV
-          echo "$VERSION" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
       
       - name: Grab Changelog
         run: |
-          CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
-          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-          echo "$CHANGELOG" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "CHANGELOG=$(awk -v ver=$(node -p "require('./package.json').version") '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)" " >> $GITHUB_ENV
 
       - name: Create Release
-        id: create_release
+        id: create-release
         uses: actions/github-script@v6
         with:
           script: |
@@ -46,25 +42,56 @@ jobs:
             
             return data.id
 
+  
 
-  publish_release:
+  publish-release:
     runs-on: ubuntu-latest
+    needs: create-release
 
-    needs: create_release
+    outputs:
+      published_at: ${{ steps.publish-release.outputs.result }}
     
     steps:
       - name: Publish Release
-        env:
-          releaseId: ${{needs.create_release.outputs.releaseId}}
+        id: publish-release
         uses: actions/github-script@v6
+        env:
+          RELEASE_ID: ${{ needs.create-release.outputs.release_id }}
         with:
           script: |
-            github.rest.repos.updateRelease({
+            const { data } = await github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: process.env.releaseId,
+              release_id: process.env.RELEASE_ID,
               draft: false,
               prerelease: false
             })
 
-#  build:
+            return data.published_at
+
+  publish-update:
+    runs-on: ubuntu-latest
+    needs: [ create-release, publish-release ]
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Create Update
+        env:
+          VERSION: ${{ needs.create-release.outputs.version }}
+          CHANGELOG: ${{ needs.create-release.outputs.changelog }}
+          PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}
+        run: node scripts/createUpdate.js
+
+      - name: Publish Update
+        run: |
+          git config --global user.name 'Samuel Kopp'
+          git config --global user.email 'azuryceo@users.noreply.github.com'
+          git commit -am "published update"
+          git push

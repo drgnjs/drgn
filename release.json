@@ -1,19 +1,19 @@
 {
-  "name": "v0.7.4",
-  "notes": "**A futuristic SSH Client for Windows, Linux, and Mac.**\n\n- ⚡ **Efficient** - takes less storage and memory.\n- ☁️ **Synchronized**` - has built-in cloud-based synchronization.\n- 🤝 **Trustworthy** - is fully open-source.\n- 🎨 **Customizable** - has support for custom themes and plugins.\n- 🔒 **Secure** - has support for two factor authentication.\n\n### Download\n\n[**`Windows`**](https://api.drgnjs.com/download?platform=windows) [**`Linux (deb)`**](https://api.drgnjs.com/download?platform=linux&format=deb) [**`Linux (tar.gz)`**](https://api.drgnjs.com/download?platform=linux&format=tar.gz) [**`Linux (AppImage)`**](https://api.drgnjs.com/download?platform=linux&format=AppImage) [**`Mac`**](https://api.drgnjs.com/download?platform=mac)\n\n### Plugins\n\n*Coming soon!*",
-  "pub_date": "2022-06-08T11:24:48Z",
+  "name": "v0.7.9",
+  "notes": "",
+  "pub_date": "2022-06-08T16:57:34Z",
   "platforms": {
     "darwin": {
-      "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.4/drgn.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVZ3VjhaV28rUzNWbFMzYUVzbS9WSVBhVnVFWUdGNjk5ZlJ6eWFvNXZRb0hpM2M5THBKaVMvZ3MxdERnUEhULzRibStmMGErcVdGLzhIa3IxQ2lhRUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NzA3MjM3CWZpbGU6L1VzZXJzL3J1bm5lci93b3JrL2RyZ24vZHJnbi9zcmMtdGF1cmkvdGFyZ2V0L3JlbGVhc2UvYnVuZGxlL21hY29zL2RyZ24uYXBwLnRhci5negpibG5TSDRkU0w4L1FJUWl5M1BpVXRYbjZOYlh3TlhvalNxd0QrOEFuRHpieFB6eWVhOGZYRzh4b3N6bGp4YkxlRHVmRzFaWGhxNXo4UWR3Z2YzU1hEQT09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.9/drgn.app.tar.gz"
     },
     "linux": {
-      "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.4/drgn_0.7.4_amd64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVVDbE5uYmt3WkFXMEhpQnNKU2cxRGZRSWJqbHgrOGRkNm0rY1dVaS9jcTJrc2JJZ1pQRXg5QXVkaHpkOFF4WlN3eG5Mb3pQNUgxYUluc2NFYzZrTmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NzA3Mjk2CWZpbGU6L2hvbWUvcnVubmVyL3dvcmsvZHJnbi9kcmduL3NyYy10YXVyaS90YXJnZXQvcmVsZWFzZS9idW5kbGUvYXBwaW1hZ2UvZHJnbl8wLjcuOV9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKMWU0QS9NRnQ4Vm8rTjUyckxVRlZHbHk2eVkxZzNqeDFiTFAvQnVOdkhwVVRvdUt3RnBOZGNBTzd5MktjWHRXb0I2bllBaExtZFlsWUlBREFUR0JURGc9PQo=",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.9/drgn_0.7.9_amd64.AppImage.tar.gz"
     },
     "win64": {
-      "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.4/drgn_0.7.4_x64_en-US.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVNFb2dqQXVtTVU3emhjZ3J6Y2t1SUxhSVJySW9FU2J0RmJvOFQydnltTzZyenZ3dkZHL1U2VDdrK0hHdUk2cDNaOEQ2R1luTWNBVndwY0NBY3cyM3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU0NzA3NDMzCWZpbGU6RDpcYVxkcmduXGRyZ25cc3JjLXRhdXJpXHRhcmdldFxyZWxlYXNlXGJ1bmRsZS9tc2kvZHJnbl8wLjcuOV94NjRfZW4tVVMubXNpLnppcApKdVkyTDR5SExSRFZsNGU4ZU54Mk9XdzFQWFlSMGgrOTZaNEFiUFR2dHZsZEtSaG4xb1NXcVZNNngvWUpkY2g3UnNQUkZuWUxHOWx4alB1aWl5RDNEdz09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.9/drgn_0.7.9_x64_en-US.msi.zip"
     }
   }
 }

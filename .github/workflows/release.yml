@@ -23,7 +23,7 @@ jobs:
       
       - name: Grab Changelog
         run: |
-          echo "CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)" " >> $GITHUB_ENV
+          echo "CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)" >> $GITHUB_ENV
 
       - name: Create Release
         id: create-release

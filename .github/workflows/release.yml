@@ -5,8 +5,31 @@ on:
     branches: [ 'dev' ]
 
 jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+          
+      - name: Bump Version
+        run: node scripts/bumpVersion.js
+
+      - name: Save Changes
+        run: |
+          git config --global user.name 'Samuel Kopp'
+          git config --global user.email 'azuryceo@users.noreply.github.com'
+          git commit -am "bumped version to $(cat version.txt)"
+          git push
+
   create-release:
     runs-on: ubuntu-latest
+    needs: bump-version
 
     outputs:
       version: ${{ env.VERSION }}
@@ -52,7 +75,7 @@ jobs:
         platform: [ macos-latest, ubuntu-latest, windows-latest ]
 
     runs-on: ${{ matrix.platform }}
-    needs: create-release
+    needs: [ bump-version, create-release ]
 
     steps:
       - name: Git Checkout
@@ -76,9 +99,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-
-      - name: Set Version
-        run: node scripts/setVersion.js
       
       - name: Build Web
         run: npm run build
@@ -92,7 +112,7 @@ jobs:
 
   publish-release:
     runs-on: ubuntu-latest
-    needs: [ create-release, build ]
+    needs: [ bump-version, create-release, build ]
 
     outputs:
       published_at: ${{ steps.publish-release.outputs.result }}
@@ -117,7 +137,7 @@ jobs:
 
   publish-update:
     runs-on: ubuntu-latest
-    needs: [ create-release, build, publish-release ]
+    needs: [ bump-version, create-release, build, publish-release ]
 
     steps:
       - name: Git Checkout

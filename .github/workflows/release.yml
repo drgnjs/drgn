@@ -16,14 +16,14 @@ jobs:
 
       - name: Grab Version
         run: |
-          VERSION = $(cat version.txt)
+          VERSION=$(cat version.txt)
           echo "VERSION<<EOF" >> $GITHUB_ENV
           echo "$VERSION" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       
       - name: Grab Changelog
         run: |
-          CHANGELOG = $(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
+          CHANGELOG=$(awk -v ver=$(cat version.txt) '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
           echo "CHANGELOG<<EOF" >> $GITHUB_ENV
           echo "$CHANGELOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV

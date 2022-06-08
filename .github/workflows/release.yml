@@ -43,10 +43,16 @@ jobs:
               draft: true,
               prerelease: false
             })
-
-            console.log(data)
             
             return data
+
+      - name: Log
+        env:
+          data: ${{ steps.create_release.outputs.result }}
+        uses: actions/github-script@v6
+        with:
+          script: console.log(process.env.data)
+
 
   publish_release:
     runs-on: ubuntu-latest

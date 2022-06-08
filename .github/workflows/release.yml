@@ -159,6 +159,7 @@ jobs:
 
       - name: Publish Update
         run: |
+          git pull origin
           git config --global user.name 'Samuel Kopp'
           git config --global user.email 'azuryceo@users.noreply.github.com'
           git commit -am "published $(cat version.txt)"

@@ -44,6 +44,13 @@ jobs:
               prerelease: false
             })
 
+      - name: Log
+        env:
+          RELEASE_ID: ${{ steps.create_release.outputs.result }}
+        uses: actions/github-script@v6
+        with:
+          script: console.log(process.env.RELEASE_ID)
+
   publish_release:
     runs-on: ubuntu-latest
 

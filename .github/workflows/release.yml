@@ -34,7 +34,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.repos.createRelease({
+            const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: process.env.VERSION,
@@ -43,13 +43,8 @@ jobs:
               draft: true,
               prerelease: false
             })
-
-      - name: Log
-        env:
-          RELEASE_ID: ${{ steps.create_release.outputs.result }}
-        uses: actions/github-script@v6
-        with:
-          script: console.log(process.env.RELEASE_ID)
+            
+            return data
 
   publish_release:
     runs-on: ubuntu-latest

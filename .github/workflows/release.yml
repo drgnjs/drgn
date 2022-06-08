@@ -34,9 +34,9 @@ jobs:
         with:
           script: |
             github.rest.repos.createRelease({
-              tag_name: ${{ env.VERSION }},
-              name: ${{ env.VERSION }},
-              body: ${{ env.CHANGELOG }},
+              tag_name: process.env.VERSION,
+              name: process.env.VERSION,
+              body: process.env.CHANGELOG,
               draft: true,
               prerelease: false
             })

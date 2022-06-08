@@ -107,6 +107,8 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
@@ -159,5 +161,5 @@ jobs:
         run: |
           git config --global user.name 'Samuel Kopp'
           git config --global user.email 'azuryceo@users.noreply.github.com'
-          git commit -am "published update"
+          git commit -am "published $(cat version.txt)"
           git push

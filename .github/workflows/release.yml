@@ -43,11 +43,21 @@ jobs:
               prerelease: false
             })
 
-  b1:
+  publish_release:
     runs-on: ubuntu-latest
     needs: create_release
     steps:
-      - run: echo ${{needs.create_release.releaseId}}
+      - name: Publish Release
+        env:
+          releaseId: ${{needs.create_release.releaseId}}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.repos.updateRelease({
+              release_id: process.env.releaseId,
+              draft: false,
+              prerelease: false
+            })
 
 #  build:
     

@@ -8,8 +8,8 @@ jobs:
   create_release:
     runs-on: ubuntu-latest
     outputs:
-      releaseId: ${{ steps.create_release.outputs.result }}
-
+      releaseId: ${{ steps.create_release.outputs.result.id }}
+    
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
@@ -46,11 +46,12 @@ jobs:
   publish_release:
     runs-on: ubuntu-latest
     needs: create_release
+    
     steps:
       - name: Publish Release
+        uses: actions/github-script@v6
         env:
           releaseId: ${{needs.create_release.releaseId}}
-        uses: actions/github-script@v6
         with:
           script: |
             github.rest.repos.updateRelease({
@@ -62,7 +63,3 @@ jobs:
             })
 
 #  build:
-    
-
-#  publish-release:
-#    runs-on: 'ubuntu-latest'

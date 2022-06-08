@@ -5,7 +5,7 @@ on:
     branches: [ dev ]
 
 jobs:
-  create_release:
+  create-release:
     runs-on: ubuntu-latest
     outputs:
       releaseId: ${{ steps.create_release.outputs.result.id }}
@@ -45,19 +45,19 @@ jobs:
 
   publish_release:
     runs-on: ubuntu-latest
-    needs: create_release
+    needs: create-release
     
     steps:
       - name: Publish Release
         uses: actions/github-script@v6
         env:
-          releaseId: ${{needs.create_release.releaseId}}
+          RELEASE_ID: ${{needs.create-release.outputs.releaseId}}
         with:
           script: |
             github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: process.env.releaseId,
+              release_id: process.env.RELEASE_ID,
               draft: false,
               prerelease: false
             })

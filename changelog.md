@@ -2,7 +2,7 @@
 
 Some dummy text
 
-## v0.6.0
+## v0.7.0
 
 **A futuristic SSH Client for Windows, Linux, and Mac.**
 

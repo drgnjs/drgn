@@ -78,8 +78,6 @@ jobs:
         run: npm ci
 
       - name: Set Version
-        env:
-          VERSION: ${{ steps.create-release.outputs.version }}
         run: node scripts/setVersion.js
       
       - name: Build Web
@@ -94,7 +92,7 @@ jobs:
 
   publish-release:
     runs-on: ubuntu-latest
-    needs: create-release
+    needs: [ create-release, build ]
 
     outputs:
       published_at: ${{ steps.publish-release.outputs.result }}
@@ -119,7 +117,7 @@ jobs:
 
   publish-update:
     runs-on: ubuntu-latest
-    needs: [ create-release, publish-release ]
+    needs: [ create-release, build, publish-release ]
 
     steps:
       - name: Git Checkout

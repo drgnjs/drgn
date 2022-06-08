@@ -1,19 +1,19 @@
 {
-  "name": "v0.7.1",
-  "notes": "\n**A futuristic SSH Client for Windows, Linux, and Mac.**\n\n- ⚡ **Efficient** - takes less storage and memory.\n- ☁️ **Synchronized**` - has built-in cloud-based synchronization.\n- 🤝 **Trustworthy** - is fully open-source.\n- 🎨 **Customizable** - has support for custom themes and plugins.\n- 🔒 **Secure** - has support for two factor authentication.\n\n### Download\n\n[**`Windows`**](https://api.drgnjs.com/download?platform=windows) [**`Linux (deb)`**](https://api.drgnjs.com/download?platform=linux&format=deb) [**`Linux (tar.gz)`**](https://api.drgnjs.com/download?platform=linux&format=tar.gz) [**`Linux (AppImage)`**](https://api.drgnjs.com/download?platform=linux&format=AppImage) [**`Mac`**](https://api.drgnjs.com/download?platform=mac)\n\n### Plugins\n\n*Coming soon!*",
-  "pub_date": "\"2022-06-08T11:07:52Z\"",
+  "name": "v0.7.2",
+  "notes": "**A futuristic SSH Client for Windows, Linux, and Mac.**\n\n- ⚡ **Efficient** - takes less storage and memory.\n- ☁️ **Synchronized**` - has built-in cloud-based synchronization.\n- 🤝 **Trustworthy** - is fully open-source.\n- 🎨 **Customizable** - has support for custom themes and plugins.\n- 🔒 **Secure** - has support for two factor authentication.\n\n### Download\n\n[**`Windows`**](https://api.drgnjs.com/download?platform=windows) [**`Linux (deb)`**](https://api.drgnjs.com/download?platform=linux&format=deb) [**`Linux (tar.gz)`**](https://api.drgnjs.com/download?platform=linux&format=tar.gz) [**`Linux (AppImage)`**](https://api.drgnjs.com/download?platform=linux&format=AppImage) [**`Mac`**](https://api.drgnjs.com/download?platform=mac)\n\n### Plugins\n\n*Coming soon!*",
+  "pub_date": "2022-06-08T11:13:49Z",
   "platforms": {
     "darwin": {
       "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.1/drgn.app.tar.gz"
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.2/drgn.app.tar.gz"
     },
     "linux": {
       "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.1/drgn_0.7.1_amd64.AppImage.tar.gz"
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.2/drgn_0.7.2_amd64.AppImage.tar.gz"
     },
     "win64": {
       "signature": "Not Found",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.1/drgn_0.7.1_x64_en-US.msi.zip"
+      "url": "https://github.com/drgnjs/drgn/releases/download/v0.7.2/drgn_0.7.2_x64_en-US.msi.zip"
     }
   }
 }

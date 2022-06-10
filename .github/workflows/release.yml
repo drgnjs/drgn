@@ -1,8 +1,8 @@
-name: 'Release'
+name: Release
 
 on:
   push:
-    branches: [ 'dev' ]
+    branches: [ current ]
 
 jobs:
   bump-version:

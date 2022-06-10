@@ -45,9 +45,6 @@
     "updater": {
       "active": true,
       "dialog": true,
-      "windows": {
-        "installMode": "quiet"
-      },
       "endpoints": [
         "https://raw.githubusercontent.com/drgnjs/drgn/dev/release.json"
       ],

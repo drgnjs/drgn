@@ -53,5 +53,5 @@ $transition: .256s;
 // mixins
 
 @mixin background($image, $color, $verticalAlignment, $horizontalAlignment, $scaling) {
-  background: url('../assets/#{$image}') $color no-repeat $verticalAlignment $horizontalAlignment / $scaling;
+  background: url('./assets/#{$image}') $color no-repeat $verticalAlignment $horizontalAlignment / $scaling;
 }

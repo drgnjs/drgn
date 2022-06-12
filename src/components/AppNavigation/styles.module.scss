@@ -1,0 +1,77 @@
+@import '../../theme';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  height: 40px;
+  background: $surface;
+  padding: 0 20px;
+}
+
+.branding {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    width: 22px;
+    pointer-events: none;
+    margin-right: 10px;
+    filter: grayscale(1);
+    pointer-events: none;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    color: $textDark;
+    opacity: .99;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 25px;
+    transition: background .3s;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      i {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+    }
+
+    &:nth-child(2) {
+      i {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      background: $overlay;
+
+      i {
+        color: $heading;
+      }
+    }
+    
+    i {
+      color: $textDark;
+      opacity: .99;
+      transition: color .3s;
+    }
+  }
+}

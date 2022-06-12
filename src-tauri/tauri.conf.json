@@ -24,7 +24,7 @@
         "icons/icon.icns"
       ],
       "identifier": "drgn",
-      "longDescription": "A better SSH Client.",
+      "longDescription": "A modern SSH client built with web technologies.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "api.drgnjs.com",
@@ -32,7 +32,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "A better SSH Client.",
+      "shortDescription": "A modern SSH client built with web technologies.",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -53,11 +53,13 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 800,
+        "minHeight": 800,
         "resizable": true,
         "title": "drgn",
-        "width": 800,
-        "decorations": true
+        "width": 1200,
+        "minWidth": 1200,
+        "decorations": false
       }
     ]
   }

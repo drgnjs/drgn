@@ -1,4 +1,4 @@
-import styles from './Animate.module.scss'
+import styles from './styles.module.scss'
 import { useState, useRef, useEffect, ReactNode } from 'react'
 
 const Animate = ({ children, animation, delay, className, ...rest }: {

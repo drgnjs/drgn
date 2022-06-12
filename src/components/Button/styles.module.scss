@@ -28,6 +28,7 @@
 // sizes
 
 @mixin buttonSizes($fontSize, $padding) {
+  font-size: $fontSize;
   width: auto;
   padding: $padding;
   box-shadow: $shadowBottom;

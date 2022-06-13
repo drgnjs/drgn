@@ -6,10 +6,7 @@ import logo from '../../assets/logo.svg'
 const AppNavigation = () => {
   return (
     <div className={styles.container} data-tauri-drag-region>
-      <div className={styles.branding}>
-        <img src={logo} alt='drgn' />
-        <p>drgn.js</p>
-      </div>
+      <img className={styles.logo} src={logo} alt='drgn' />
       
       <nav className={styles.navigation}>
         <li onClick={() => appWindow.minimize()}>

@@ -4,31 +4,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
   height: 40px;
   background: $surface;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
-.branding {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  img {
-    width: 22px;
-    pointer-events: none;
-    margin-right: 10px;
-    filter: grayscale(1);
-    pointer-events: none;
-  }
-
-  p {
-    font-size: 14px;
-    font-weight: 500;
-    color: $textDark;
-    opacity: .99;
-  }
+.logo {
+  width: 22px;
+  pointer-events: none;
+  margin-right: 10px;
+  filter: grayscale(1);
+  pointer-events: none;
 }
 
 .navigation {

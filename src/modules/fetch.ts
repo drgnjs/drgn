@@ -51,7 +51,7 @@ const customFetch: CustomFetch = async (url, method, _config = {}) => {
 
     return {
       code: res.status,
-      data: res.headers.get('content-type')?.includes('application/json') ? await res.json() : await res.text(),
+      data: res.body ? await res.json() : null,
       ok: res.ok
     }
   } catch (err) {

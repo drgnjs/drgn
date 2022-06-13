@@ -46,20 +46,29 @@ const customFetch: CustomFetch = async (url, method, _config = {}) => {
     })
   }
 
-  try {
-    const res = await fetch(url, config)
+  let res
+  let data
 
-    return {
-      code: res.status,
-      data: res.body ? await res.json() : null,
-      ok: res.ok
-    }
+  try {
+    res = await fetch(url, config)
   } catch (err) {
     return {
       code: 400,
       data: undefined,
       ok: false
     }
+  }
+
+  try {
+    data = await res.json()
+  } catch (err) {
+    data = undefined
+  }
+
+  return {
+    code: res.status,
+    data,
+    ok: res.ok
   }
 }
 

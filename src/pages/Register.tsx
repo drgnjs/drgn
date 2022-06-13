@@ -1,4 +1,4 @@
-import { FormEvent, useContext, useEffect, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 import { Link, Navigate, NavLink } from 'react-router-dom'
 import Animate from '../components/Animate'
 import Button from '../components/Button'
@@ -56,7 +56,7 @@ const Register = () => {
   ) : waiting ? (
     <div className={styles.error}>
       <p>We've sent you an email. Click on the link we sent you before trying to log in.</p>
-      <Link to='/login'>Sign in</Link>
+      <Button href='/login'>Sign in</Button>
     </div>
   ) : (
     <div className={styles.container}>

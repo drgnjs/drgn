@@ -1,0 +1,164 @@
+@import '../../theme';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @include background('loginPageShape.svg', $surfaceDark, bottom, left, cover);
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border: solid 2px $surfaceTertiary;
+    border-radius: 28px;
+    background: $surface;
+    box-shadow: $shadowBottom;
+    @include background('shape.svg', $surface, bottom, left, cover);
+
+    h1 {
+      font-size: 40px;
+      color: $heading;
+      font-weight: 700;
+      opacity: .99;
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $textDarker;
+      opacity: .99;
+      text-align: left;
+      margin-top: 30px;
+
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+
+      input {
+        font-size: 15px;
+        color: $text;
+        opacity: .99;
+        width: calc(350px - 4px - 24px);
+        padding: 5px 12px;
+        background: $surfaceDark;
+        border: solid 2px $surfaceTertiary;
+        border-radius: 5px;
+        transition: border-color .3s;
+        margin-top: 10px;
+
+        &:focus {
+          border-color: $overlay;
+        }
+
+        &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active {
+          box-shadow: 0 0 0 30px $surfaceDark inset !important;
+          -webkit-box-shadow: 0 0 0 30px $surfaceDark inset !important;
+          color: $text !important;
+        }
+      }
+    }
+
+    button {
+      margin-top: 30px;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 15px;
+    border-radius: 64px;
+    height: 60px;
+    background: $surfaceSecondary;
+    box-shadow: $shadowBottom;
+    bottom: 30px;
+    padding: 0 20px;
+    position: absolute;
+    box-shadow: $shadowBottom;
+
+    span {
+      height: 50%;
+      width: 2px;
+      background: $overlay;
+    }
+
+    a {
+      font-size: 16px;
+      color: $text;
+      opacity: .99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 8px;
+      transition: .3s;
+      border-radius: 5px;
+
+      i {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+    }
+
+    .activeLink {
+      background: $overlay;
+      color: $heading;
+    }
+  }
+}
+
+.error {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h3 {
+    font-size: 32px;
+    color: $textRed;
+    font-weight: 600;
+    opacity: .99;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $textDark;
+    opacity: .99;
+    width: 300px;
+  }
+
+  span {
+    font-size: 16px;
+    color: $text;
+    text-decoration: underline;
+    text-decoration-color: $textDark;
+    opacity: .99;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color .3s;
+
+    &:hover {
+      color: $heading;
+      text-decoration: none;
+    }
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+}

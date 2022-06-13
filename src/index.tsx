@@ -19,7 +19,8 @@ import 'material-symbols/rounded.css'
 import './index.scss'
 import AppNavigation from './components/AppNavigation'
 import styles from './app.module.scss'
-import { Get } from './modules/fetch'
+import { Get, Post } from './modules/fetch'
+import tauriConfig from '../src-tauri/tauri.conf.json'
 
 const App = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -34,9 +35,22 @@ const App = () => {
   }
 
   useEffect(() => {
-    // send data to api
-      // os, drgn version, user id
+    const sendData = async () => {
+      await Post('/insights', {
+        token: window.localStorage.getItem('token') as string,
+        body: {
+          // @ts-ignore
+          os: window.navigator?.userAgentData?.platform || window.navigator?.platform || 'unknown',
+          version: tauriConfig.package.version
+        }
+      })
+    }
 
+    if (user)
+      sendData()
+  }, [user])
+
+  useEffect(() => {
     const fetchUser = async () => {
       const { ok, data } = await Get('/users/@me', {
         token: window.localStorage.getItem('token') as string

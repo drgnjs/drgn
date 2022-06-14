@@ -2,7 +2,8 @@ name: Publish
 
 on:
   push:
-    branches: [ 'dev' ]
+    tags:
+      - 'v*'
 
 jobs:
   create-release:
@@ -22,7 +23,7 @@ jobs:
           node-version: 18.x
 
       - name: Grab Version
-        run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+        run: echo "VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       
       - name: Grab Changelog
         run: |

@@ -1,0 +1,146 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    needs: bump-version
+
+    outputs:
+      version: ${{ env.VERSION }}
+      changelog: ${{ env.CHANGELOG }}
+      release_id: ${{ steps.create-release.outputs.result }}
+    
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Grab Version
+        run: echo "VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      
+      - name: Grab Changelog
+        run: |
+          CHANGELOG=$(awk -v ver=$VERSION '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p' changelog.md)
+          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+          echo "$CHANGELOG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create-release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data } = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: process.env.VERSION,
+              name: process.env.VERSION,
+              body: process.env.CHANGELOG,
+              draft: true,
+              prerelease: false
+            })
+            
+            return data.id
+
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ macos-latest, ubuntu-latest, windows-latest ]
+
+    runs-on: ${{ matrix.platform }}
+    needs: [ bump-version, create-release ]
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Install System Dependencies (Ubuntu only)
+        if: matrix.platform == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Install Dependencies
+        run: npm ci
+      
+      - name: Build Web
+        run: npm run build
+
+      - name: Build App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+        with:
+          releaseId: ${{ needs.create-release.outputs.release_id }}
+
+  publish-release:
+    runs-on: ubuntu-latest
+    needs: [ bump-version, create-release, build ]
+
+    outputs:
+      published_at: ${{ steps.publish-release.outputs.result }}
+    
+    steps:
+      - name: Publish Release
+        id: publish-release
+        uses: actions/github-script@v6
+        env:
+          RELEASE_ID: ${{ needs.create-release.outputs.release_id }}
+        with:
+          script: |
+            const { data } = await github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.RELEASE_ID,
+              draft: false,
+              prerelease: false
+            })
+
+            return data.published_at
+
+  publish-update:
+    runs-on: ubuntu-latest
+    needs: [ bump-version, create-release, build, publish-release ]
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Create Update
+        env:
+          VERSION: ${{ needs.create-release.outputs.version }}
+          CHANGELOG: ${{ needs.create-release.outputs.changelog }}
+          PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}
+        run: node scripts/createUpdate.js
+
+      - name: Publish Update
+        env:
+          VERSION: ${{ needs.create-release.outputs.version }}
+        run: |
+          git pull origin
+          git config --global user.name 'Samuel Kopp'
+          git config --global user.email 'azuryceo@users.noreply.github.com'
+          git commit -am "published `$VERSION`"
+          git push

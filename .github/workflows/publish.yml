@@ -8,11 +8,9 @@ on:
 jobs:
   create-release:
     runs-on: ubuntu-latest
-    needs: bump-version
 
     outputs:
       version: ${{ env.VERSION }}
-      changelog: ${{ env.CHANGELOG }}
       release_id: ${{ steps.create-release.outputs.result }}
     
     steps:
@@ -92,7 +90,7 @@ jobs:
 
   publish-release:
     runs-on: ubuntu-latest
-    needs: [ bump-version, create-release, build ]
+    needs: [ create-release, build ]
 
     outputs:
       published_at: ${{ steps.publish-release.outputs.result }}
@@ -117,7 +115,7 @@ jobs:
 
   publish-update:
     runs-on: ubuntu-latest
-    needs: [ bump-version, create-release, build, publish-release ]
+    needs: [ create-release, build, publish-release ]
 
     steps:
       - name: Git Checkout
@@ -131,7 +129,6 @@ jobs:
       - name: Create Update
         env:
           VERSION: ${{ needs.create-release.outputs.version }}
-          CHANGELOG: ${{ needs.create-release.outputs.changelog }}
           PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}
         run: node scripts/createUpdate.js
 

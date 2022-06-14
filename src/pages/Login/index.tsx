@@ -4,7 +4,7 @@ import Animate from '../../components/Animate'
 import Button from '../../components/Button'
 import Icon from '../../components/Icon'
 import UserContext from '../../contexts/UserContext'
-import { Post } from '../../modules/fetch'
+import tauriConfig from '../../../src-tauri/tauri.conf.json'
 import styles from './styles.module.scss'
 
 const Login = () => {
@@ -18,18 +18,33 @@ const Login = () => {
     const email = (e.target as HTMLFormElement).email.value
     const password = (e.target as HTMLFormElement).password.value
 
-    const login = await Post('/login', {
-      body: {
-        email,
-        password
-      }
-    })
+    try {
+      const res = await fetch((import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.drgnjs.com') + '/login', {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+          'drgn-version': tauriConfig.package.version
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
 
-    if (login.ok) {
-      setUser(login.data.user)
-      setToken(login.data.token)
-    } else {
-      setError(login.data.message)
+      const data = await res.json()
+
+      console.log(res)
+
+
+      if (res.status === 200) {
+        setUser(data.user)
+        setToken(data.token)
+      } else {
+        setError(data.message)
+      }
+    } catch (err) {
+      setError('unknown')
     }
   }
 
@@ -43,6 +58,12 @@ const Login = () => {
     <div className={styles.error}>
       <h3>Too Much Tries</h3>
       <p>You will have to wait about an hour before you can sign in again.</p>
+    </div>
+  ) : error === 'unknown' ? (
+    <div className={styles.error}>
+      <h3>Unknown Error</h3>
+      <p>Something went wrong.</p>
+      <span onClick={retry}>Try again</span>
     </div>
   ) : error === 'invalid email' ? (
     <div className={styles.error}>

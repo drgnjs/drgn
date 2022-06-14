@@ -1,15 +1,15 @@
 import { FormEvent, useContext, useState } from 'react'
-import { Link, Navigate, NavLink } from 'react-router-dom'
+import { Navigate, NavLink } from 'react-router-dom'
 import Animate from '../components/Animate'
 import Button from '../components/Button'
 import Icon from '../components/Icon'
 import UserContext from '../contexts/UserContext'
-import { Post } from '../modules/fetch'
 import styles from './Login/styles.module.scss'
+import tauriConfig from '../../src-tauri/tauri.conf.json'
 
 const Register = () => {
   const [error, setError] = useState<string | null>(null)
-  const [waiting, setWaiting] = useState<boolean>()
+  const [waiting, setWaiting] = useState<boolean>(false)
 
   const { user } = useContext(UserContext)
 
@@ -22,17 +22,23 @@ const Register = () => {
 
     if (password !== repeatPassword) return setError('different passwords')
 
-    const register = await Post('/register', {
-      body: {
-        email,
-        password
-      }
-    })
+    try {
+      const res = await fetch((import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.drgnjs.com') + '/register', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'drgn-version': tauriConfig.package.version
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
 
-    if (register.ok) {
-      setWaiting(true)
-    } else {
-      setError(register.data.message)
+      if (res.status === 200) setWaiting(true)
+      else setError((await res.json()).message)
+    } catch (err) {
+      setError('unknown')
     }
   }
 
@@ -51,6 +57,12 @@ const Register = () => {
     <div className={styles.error}>
       <h3>Repeat the Password</h3>
       <p>You need to specify the same password twice.</p>
+      <span onClick={retry}>Try again</span>
+    </div>
+  ) : error === 'unknown' ? (
+    <div className={styles.error}>
+      <h3>Unknown Error</h3>
+      <p>Something went wrong.</p>
       <span onClick={retry}>Try again</span>
     </div>
   ) : waiting ? (

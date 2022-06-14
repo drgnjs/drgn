@@ -141,7 +141,6 @@ jobs:
         env:
           VERSION: ${{ needs.create-release.outputs.version }}
         run: |
-          git pull origin
           git config --global user.name 'Samuel Kopp'
           git config --global user.email 'azuryceo@users.noreply.github.com'
           git commit -am "published `$VERSION`"

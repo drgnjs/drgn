@@ -1,10 +1,10 @@
-use tauri::Manager;
-use window_shadows::set_shadow;
-
-#[cfg_attr(
+#![cfg_attr(
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
+
+use tauri::Manager;
+use window_shadows::set_shadow;
 
 fn main() {
   tauri::Builder::default()

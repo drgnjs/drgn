@@ -8,7 +8,7 @@ const releaseJson = JSON.parse(await readFile('release.json', { encoding: 'utf-8
 
 // update release
 releaseJson.name = process.env.VERSION
-releaseJson.notes = process.env.CHANGELOG.replace('\n', '')
+releaseJson.notes = `Read our changelog to learn more: https://drgnjs.com/changelog/v100`
 releaseJson.pub_date = process.env.PUBLISHED_AT.replaceAll('\"', '').replace('T', ' ')
 
 // update signatures

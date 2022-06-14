@@ -15,16 +15,16 @@ releaseJson.pub_date = process.env.PUBLISHED_AT.replaceAll('\"', '').replace('T'
 const macSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn.app.tar.gz.sig`)).text()
 releaseJson.platforms.darwin.signature = macSignature
 
-const linuxSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_${latestRelease.tag_name.replace('v', '')}_amd64.AppImage.tar.gz.sig`)).text()
+const linuxSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_0.0.0_amd64.AppImage.tar.gz.sig`)).text()
 releaseJson.platforms.linux.signature = linuxSignature
 
-const windowsSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_${latestRelease.tag_name.replace('v', '')}_x64_en-US.msi.zip.sig`)).text()
+const windowsSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_0.0.0_x64_en-US.msi.zip.sig`)).text()
 releaseJson.platforms.win64.signature = windowsSignature
 
 // update download urls
 releaseJson.platforms.darwin.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn.app.tar.gz`
-releaseJson.platforms.linux.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_${latestRelease.tag_name.replace('v', '')}_amd64.AppImage.tar.gz`
-releaseJson.platforms.win64.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_${latestRelease.tag_name.replace('v', '')}_x64_en-US.msi.zip`
+releaseJson.platforms.linux.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_0.0.0_amd64.AppImage.tar.gz`
+releaseJson.platforms.win64.url = `https://github.com/drgnjs/drgn/releases/download/${latestRelease.tag_name}/drgn_0.0.0_x64_en-US.msi.zip`
 
 // update json file
 await writeFile('release.json', JSON.stringify(releaseJson, null, 2) + '\n')

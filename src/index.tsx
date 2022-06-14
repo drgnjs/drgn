@@ -19,7 +19,6 @@ import 'material-symbols/rounded.css'
 import './index.scss'
 import AppNavigation from './components/AppNavigation'
 import styles from './app.module.scss'
-import { Get, Post } from './modules/fetch'
 import tauriConfig from '../src-tauri/tauri.conf.json'
 
 const App = () => {
@@ -36,14 +35,21 @@ const App = () => {
 
   useEffect(() => {
     const sendData = async () => {
-      await Post('/insights', {
-        token: window.localStorage.getItem('token') as string,
-        body: {
-          // @ts-ignore
-          os: window.navigator?.userAgentData?.platform || window.navigator?.platform || 'unknown',
-          version: tauriConfig.package.version
-        }
-      })
+      try {
+        await fetch((import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.drgnjs.com') + '/insights', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'drgn-version': tauriConfig.package.version,
+            'authorization': `bearer ${token ?? window.localStorage.getItem('token')}`
+          },
+          body: JSON.stringify({
+            // @ts-ignore
+            os: window.navigator?.userAgentData?.platform || window.navigator?.platform || 'unknown',
+            version: tauriConfig.package.version
+          })
+        })
+      } catch (err) {}
     }
 
     if (user)
@@ -52,16 +58,24 @@ const App = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const { ok, data } = await Get('/users/@me', {
-        token: window.localStorage.getItem('token') as string
-      })
+      try {
+        const res = await fetch((import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.drgnjs.com') + '/users/@me', {
+          headers: {
+            accept: 'application/json',
+            'drgn-version': tauriConfig.package.version,
+            'authorization': `bearer ${token ?? window.localStorage.getItem('token')}`
+          }
+        })
 
-      if (!ok)
-        window.localStorage.deleteItem('token')
-
-      setUser(data.user)
-      console.log(user ?? 'is still null')
-      changeToken(window.localStorage.getItem('token'))
+        if (res.status === 200) {
+          setUser((await res.json()).user)
+          changeToken(window.localStorage.getItem('token'))
+        } else {
+          window.localStorage.removeItem('token')
+        }
+      } catch (err) {
+        window.localStorage.removeItem('token')
+      }
     }
 
     if (window.localStorage.getItem('token') !== null)

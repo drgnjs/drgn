@@ -8,7 +8,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  @include background('loginPageShape.svg', $surfaceDark, bottom, left, cover);
+  @include background(url('../../assets/loginShape.svg'), $surfaceDark, bottom, left, cover);
 
   form {
     display: flex;
@@ -20,7 +20,7 @@
     border-radius: 28px;
     background: $surface;
     box-shadow: $shadowBottom;
-    @include background('shape.svg', $surface, bottom, left, cover);
+    @include background(url('../../assets/shape.svg'), $surface, bottom, left, cover);
 
     h1 {
       font-size: 40px;

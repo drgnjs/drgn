@@ -45,7 +45,7 @@
 }
 
 .bottom {
-  @include background('shape.svg', $surface, bottom, left, cover);
+  @include background(url('../../assets/shape.svg'), $surface, bottom, left, cover);
   border-top-left-radius: 64px;
   border-top-right-radius: 64px;
   height: 70%;

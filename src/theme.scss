@@ -44,6 +44,6 @@ $shadowAll: 0 8px 15px rgba(0, 0, 0, .2);
 
 // mixins
 
-@mixin background($image, $color, $verticalAlignment, $horizontalAlignment, $scaling) {
-  background: url('./assets/#{$image}') $color no-repeat $verticalAlignment $horizontalAlignment / $scaling;
+@mixin background($url, $color, $verticalAlignment, $horizontalAlignment, $scaling) {
+  background: $url $color no-repeat $verticalAlignment $horizontalAlignment / $scaling;
 }

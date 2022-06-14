@@ -2,7 +2,10 @@ name: 'Release'
 
 on:
   push:
-    branches: [ 'current' ]
+    branches:
+      - 'dev'
+    tags:
+      - v1.**
 
 jobs:
   bump-version:

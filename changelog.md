@@ -2,6 +2,12 @@
 
 *We can't give much away, but it's going to be awesome!*
 
+## v1.0.2
+
+### Bug Fixes
+
+- fixed `publish` workflow
+
 ## v1.0.1
 
 ### Bug Fixes

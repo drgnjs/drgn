@@ -124,7 +124,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v2
+        run: git checkout dev
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
@@ -143,6 +143,5 @@ jobs:
         run: |
           git config --global user.name 'Samuel Kopp'
           git config --global user.email 'azuryceo@users.noreply.github.com'
-          git checkout dev
           git commit -am "published `$VERSION`"
           git push origin dev

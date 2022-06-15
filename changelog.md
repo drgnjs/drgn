@@ -1,6 +1,9 @@
 ## Unpublished
 
-*We can't give much away, but it's going to be awesome!*
+### Changes
+
+- upgraded `tauri` to **1.0.0-rc.17** in #21
+- upgraded `tauri-build` to **1.0.0-rc.15** in #22
 
 ## v1.0.12
 

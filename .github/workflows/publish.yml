@@ -143,32 +143,40 @@ jobs:
           script: |
             const fetch = require('node-fetch')
 
+            const json = await (await fetch('https://api.github.com/repos/drgnjs/drgn/git/trees/dev')).json() 
+
             const macSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz.sig`)).text()
             const linuxSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz.sig`)).text()
             const windowsSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip.sig`)).text()
 
+            const stringData = JSON.stringify({
+              name: process.env.VERSION,
+              notes: `Read our changelog to learn more: https://drgnjs.com/changelog/${process.env.VERSION.replaceAll('.', '')}`,
+              pub_date: process.env.PUBLISHED_AT.replaceAll('\"', ''),
+              platforms: {
+                darwin: {
+                  signature: macSignature,
+                  url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz`
+                },
+                linux: {
+                  signature: linuxSignature,
+                  url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz`
+                },
+                win64: {
+                  signature: windowsSignature,
+                  url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip`
+                }
+              }
+            }, null, 2) + '\n'
+
+            const buffer = new Buffer(stringData)
+            const base64Data = buffer.toString('base64')
+            
             github.rest.repos.createOrUpdateFileContents({
               owner: context.repo.owner,
-              repo: context.repo.owner,
+              repo: context.repo.repo,
               path: 'release.json',
-              content: JSON.stringify({
-                name: process.env.VERSION,
-                notes: `Read our changelog to learn more: https://drgnjs.com/changelog/${process.env.VERSION.replace('v', '')}`,
-                pub_date: process.env.PUBLISHED_AT.replaceAll('\"', ''),
-                platforms: {
-                  darwin: {
-                    signature: macSignature,
-                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz`
-                  },
-                  linux: {
-                    signature: linuxSignature,
-                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz`
-                  },
-                  win64: {
-                    signature: windowsSignature,
-                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip`
-                  }
-                }
-              }, null, 2) + '\n',
+              sha: json.tree.filter(i => i.path === 'release.json')[0].sha,
+              content: base64Data,
               message: `published \`${process.env.VERSION}\``
             })

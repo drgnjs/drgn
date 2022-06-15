@@ -135,6 +135,7 @@ jobs:
         run: npm install node-fetch
 
       - name: Create Update
+        uses: actions/github-script@v6
         env:
           VERSION: ${{ needs.create-release.outputs.version }}
           PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}

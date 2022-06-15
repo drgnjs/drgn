@@ -2,6 +2,8 @@
 
 ### Changes
 
+- added `eslint` (with plugins)
+- fixed linting issues
 - upgraded `tauri` to **1.0.0-rc.17** ([#21](https://github.com/drgnjs/drgn/pull/21))
 - upgraded `tauri-build` to **1.0.0-rc.15** ([#22](https://github.com/drgnjs/drgn/pull/22))
 

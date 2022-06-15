@@ -126,18 +126,46 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
 
-      - name: Use Node.js 18.x
+      - name: Install node-fetch
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
+        run: npm install node-fetch
 
       - name: Create Update
         env:
           VERSION: ${{ needs.create-release.outputs.version }}
           PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}
-        run: |
-          git config --global user.name 'Samuel Kopp'
-          git config --global user.email 'azuryceo@users.noreply.github.com'
-          node scripts/createUpdate.js
-          git commit -am "published $VERSION"
-          git push origin dev
+        with:
+          script: |
+            const fetch = require('node-fetch')
+
+            const macSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz.sig`)).text()
+            const linuxSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz.sig`)).text()
+            const windowsSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip.sig`)).text()
+
+            github.rest.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.owner,
+              path: 'release.json',
+              content: JSON.stringify({
+                name: process.env.VERSION,
+                notes: `Read our changelog to learn more: https://drgnjs.com/changelog/${process.env.VERSION.replace('v', '')}`,
+                pub_date: process.env.PUBLISHED_AT.replaceAll('\"', ''),
+                platforms: {
+                  darwin: {
+                    signature: macSignature,
+                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz`
+                  },
+                  linux: {
+                    signature: linuxSignature,
+                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz`
+                  },
+                  win64: {
+                    signature: windowsSignature,
+                    url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip`
+                  }
+                }
+              }, null, 2) + '\n',
+              message: `published \`${process.env.VERSION}\``
+            })

@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles.module.scss'
+import type { ButtonHTMLAttributes } from 'react'
 
 interface Attributes extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string

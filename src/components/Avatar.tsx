@@ -1,6 +1,6 @@
 import { createAvatar } from '@dicebear/avatars'
 import * as style from '@dicebear/avatars-identicon-sprites'
-import { ImgHTMLAttributes } from 'react'
+import type { ImgHTMLAttributes } from 'react'
 
 interface Attributes extends ImgHTMLAttributes<HTMLImageElement> {
   seed: string

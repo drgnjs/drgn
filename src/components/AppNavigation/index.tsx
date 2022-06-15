@@ -1,7 +1,7 @@
 import { appWindow } from '@tauri-apps/api/window'
+import logo from '../../assets/logo.svg'
 import Icon from '../Icon'
 import styles from './styles.module.scss'
-import logo from '../../assets/logo.svg'
 
 const AppNavigation = () => {
   return (

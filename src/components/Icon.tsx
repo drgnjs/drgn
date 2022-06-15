@@ -1,12 +1,15 @@
-const Icon = ({ name, outlined, filled, weight, fontawesome, className, ...rest }: {
-  name: string,
-  outlined?: boolean,
-  filled?: boolean,
-  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700,
-  fontawesome?: boolean,
-  className?: string,
-  [key: string]: any
-}) => {
+import type { HTMLAttributes } from 'react'
+
+interface Attributes extends HTMLAttributes<HTMLElement> {
+  name: string
+  outlined?: boolean
+  filled?: boolean
+  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700
+  fontawesome?: boolean
+  className?: string
+}
+
+const Icon = ({ name, outlined, filled, weight, fontawesome, className, ...rest }: Attributes) => {
   if (fontawesome)
     return <i className={`fab${className ? ' ' + className : ''}`} style={{ fontStyle: 'normal' }} {...rest}>{name}</i>
   

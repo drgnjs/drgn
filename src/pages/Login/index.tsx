@@ -1,11 +1,12 @@
-import { FormEvent, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Navigate, NavLink } from 'react-router-dom'
+import tauriConfig from '../../../src-tauri/tauri.conf.json'
 import Animate from '../../components/Animate'
 import Button from '../../components/Button'
 import Icon from '../../components/Icon'
 import UserContext from '../../contexts/UserContext'
-import tauriConfig from '../../../src-tauri/tauri.conf.json'
 import styles from './styles.module.scss'
+import type { FormEvent} from 'react'
 
 const Login = () => {
   const [error, setError] = useState<string | null>(null)

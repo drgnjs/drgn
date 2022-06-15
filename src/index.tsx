@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import tauriConfig from '../src-tauri/tauri.conf.json'
+import styles from './app.module.scss'
+import AppNavigation from './components/AppNavigation'
+import UserContext from './contexts/UserContext'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import UserContext from './contexts/UserContext'
-import { User } from './types'
+import type { User } from './types'
 import '@fontsource/poppins'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
@@ -17,9 +20,6 @@ import '@fortawesome/fontawesome-free/css/brands.css'
 import 'material-symbols/outlined.css'
 import 'material-symbols/rounded.css'
 import './index.scss'
-import AppNavigation from './components/AppNavigation'
-import styles from './app.module.scss'
-import tauriConfig from '../src-tauri/tauri.conf.json'
 
 const App = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -49,7 +49,9 @@ const App = () => {
             version: tauriConfig.package.version
           })
         })
-      } catch (err) {}
+      } catch (err) {
+        console.log('Could not post insights.')
+      }
     }
 
     if (user)

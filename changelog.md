@@ -2,7 +2,7 @@
 
 *We can't give much away, but it's going to be awesome!*
 
-## v1.0.8
+## v1.0.9
 
 ### Bug Fixes
 

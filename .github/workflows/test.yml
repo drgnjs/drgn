@@ -62,7 +62,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               path: 'release.json',
-              sha: json.tree.filter(i => i.path === 'release.json')[0].sha
+              sha: json.tree.filter(i => i.path === 'release.json')[0].sha,
               content: base64Data,
               message: `published \`${process.env.VERSION}\``
             })

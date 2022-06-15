@@ -143,5 +143,6 @@ jobs:
         run: |
           git config --global user.name 'Samuel Kopp'
           git config --global user.email 'azuryceo@users.noreply.github.com'
+          git checkout dev
           git commit -am "published `$VERSION`"
-          git push
+          git push origin dev

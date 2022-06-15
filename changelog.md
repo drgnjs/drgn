@@ -2,6 +2,22 @@
 
 *We can't give much away, but it's going to be awesome!*
 
+## v1.0.12
+
+### Bug Fixes
+
+- fixed invalid platform names specified in `release.json`
+
+### Changes
+
+- upgraded `tauri` to **1.0.0-rc.16**
+- upgraded `tauri-build` to **1.0.0-rc.14**
+- upgraded `@tauri-apps/cli` to **1.0.0-rc.15**
+- upgraded `material-symbols` to **0.2.1**
+- upgraded `concurrently` to **7.2.2**
+- upgraded `react` to **18.2.0**
+- upgraded `react-dom` to **18.2.0**
+
 ## v1.0.11
 
 ### Bug Fixes

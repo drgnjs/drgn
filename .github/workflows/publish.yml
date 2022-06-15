@@ -154,15 +154,15 @@ jobs:
               notes: `Read our changelog to learn more: https://drgnjs.com/changelog/${process.env.VERSION.replaceAll('.', '')}`,
               pub_date: process.env.PUBLISHED_AT.replaceAll('\"', ''),
               platforms: {
-                darwin: {
+                'darwin-x86_64': {
                   signature: macSignature,
                   url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz`
                 },
-                linux: {
+                'linux-x86_64': {
                   signature: linuxSignature,
                   url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz`
                 },
-                win64: {
+                'windows-x86_64': {
                   signature: windowsSignature,
                   url: `https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_x64_en-US.msi.zip`
                 }

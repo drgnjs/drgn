@@ -6,8 +6,11 @@
 
 - added `eslint` (with plugins)
 - fixed linting issues
-- upgraded `tauri` to **1.0.0-rc.17** ([#21](https://github.com/drgnjs/drgn/pull/21))
-- upgraded `tauri-build` to **1.0.0-rc.15** ([#22](https://github.com/drgnjs/drgn/pull/22))
+- upgraded `@tauri-apps/cli` to **1.0.0** in [#23](https://github.com/drgnjs/drgn/pull/23)
+- upgraded `@tauri-apps/api` to **1.0.0** in [#24](https://github.com/drgnjs/drgn/pull/24)
+- upgraded `@types/react` to **18.0.13** in [#25](https://github.com/drgnjs/drgn/pull/25)
+- upgraded `tauri-build` to **1.0.0** in [#26](https://github.com/drgnjs/drgn/pull/26)
+- upgraded `tauri` to **1.0.0** in [#27](https://github.com/drgnjs/drgn/pull/27)
 
 ## v1.0.12
 

@@ -1,11 +1,15 @@
 # Changelog
 
-## Unpublished
+## v1.0.13
 
 ### Changes
 
 - added `eslint` (with plugins)
 - fixed linting issues
+- made future Windows updates run in the background
+
+### Dependencies
+
 - upgraded `@tauri-apps/cli` to **1.0.0** in [#23](https://github.com/drgnjs/drgn/pull/23)
 - upgraded `@tauri-apps/api` to **1.0.0** in [#24](https://github.com/drgnjs/drgn/pull/24)
 - upgraded `@types/react` to **18.0.13** in [#25](https://github.com/drgnjs/drgn/pull/25)

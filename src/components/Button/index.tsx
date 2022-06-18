@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import styles from './styles.module.scss'
+import styles from './styles.module.sass'
 import type { ButtonHTMLAttributes } from 'react'
 
 interface Attributes extends ButtonHTMLAttributes<HTMLButtonElement> {

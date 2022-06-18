@@ -1,0 +1,51 @@
+@import '../../theme'
+
+// colors
+
+@mixin buttonColors($default, $hover, $active)
+  color: $heading
+  background: $default
+  transition: background .3s ease-out
+  cursor: pointer
+
+  &:hover
+    background: $hover
+
+  &:active
+    background: $active
+
+
+.blurple
+  @include buttonColors($blurple, $textBlurple, $blurpleTertiary)
+
+
+.gray
+  @include buttonColors($gray, $graySecondary, $grayTertiary)
+
+
+// sizes
+
+@mixin buttonSizes($fontSize, $padding)
+  font-size: $fontSize
+  width: auto
+  padding: $padding
+  box-shadow: $shadowBottom
+  border-radius: 0.1875rem
+  opacity: .99
+
+
+.small
+  @include buttonSizes(0.875rem, 0.5rem 0.5625rem)
+
+
+.large
+  @include buttonSizes(1rem, 0.5625rem 0.6875rem)
+
+
+// extra
+
+.disabled
+  color: $text
+  background: $grayTertiary
+  border-radius: 0.1875rem
+  cursor: not-allowed

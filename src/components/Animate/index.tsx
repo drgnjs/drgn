@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import styles from './styles.module.scss'
+import styles from './styles.module.sass'
 import type { ReactNode , HTMLAttributes } from 'react'
 
 interface Attributes extends HTMLAttributes<HTMLDivElement> {

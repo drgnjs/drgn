@@ -5,7 +5,7 @@ import Animate from '../../components/Animate'
 import Button from '../../components/Button'
 import Icon from '../../components/Icon'
 import UserContext from '../../contexts/UserContext'
-import styles from './styles.module.scss'
+import styles from './styles.module.sass'
 import type { FormEvent} from 'react'
 
 const Login = () => {

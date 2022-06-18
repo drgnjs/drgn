@@ -123,26 +123,9 @@ svg {
 }
 
 .tippy-box[data-animation=shift-away][data-state=hidden]{opacity:0}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=top]{transform:translateY(10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=bottom]{transform:translateY(-10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=left]{transform:translateX(10px)}.tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=right]{transform:translateX(-10px)}
+
 .tippy-box[data-theme=menu] {
-  background: $overlay;
-  border-radius: 0.3125rem;
-  box-shadow: $shadowBottom;
-}
-
-.tippy-box[data-theme=darkMenu] {
-  background: $surfaceQuartiary;
-  border-radius: 0.3125rem;
-  box-shadow: $shadowBottom;
-}
-
-.tippy-box[data-theme=userMenu] {
-  background: $overlay;
-  border-radius: 16px;
-  box-shadow: $shadowBottom;
-}
-
-.tippy-box[data-theme=defaultMenu] {
-  background: $surfaceQuartiary;
-  border-radius: 16px;
+  background: $surfaceTertiary;
+  border-radius: 8px;
   box-shadow: $shadowBottom;
 }

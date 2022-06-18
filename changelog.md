@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.1.0
+
+### New Features
+
+- added server dashboard
+- added file manager
+
+### Dependencies
+
+- upgraded `@tauri-apps/api` to **1.0.1** in [#28](https://github.com/drgnjs/drgn/pull/28)
+- upgraded `@dicebear/avatars-identicon-sprites` to **4.10.3** in [#29](https://github.com/drgnjs/drgn/pull/29)
+- upgraded `@types/react` to **18.0.14** in [#30](https://github.com/drgnjs/drgn/pull/30)
+- upgraded `@dicebear/avatars` to **4.10.3** in [#31](https://github.com/drgnjs/drgn/pull/31)
+
 ## v1.0.13
 
 ### Changes

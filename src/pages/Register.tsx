@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { Navigate, NavLink } from 'react-router-dom'
-import tauriConfig from '../../src-tauri/tauri.conf.json'
+import packageJson from '../../package.json'
 import Animate from '../components/Animate'
 import Button from '../components/Button'
 import Icon from '../components/Icon'
@@ -28,7 +28,7 @@ const Register = () => {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'drgn-version': tauriConfig.package.version
+          'drgn-version': packageJson.version
         },
         body: JSON.stringify({
           email,

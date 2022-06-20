@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { Navigate, NavLink } from 'react-router-dom'
-import tauriConfig from '../../../src-tauri/tauri.conf.json'
+import packageJson from '../../../package.json'
 import Animate from '../../components/Animate'
 import Button from '../../components/Button'
 import Icon from '../../components/Icon'
@@ -25,7 +25,7 @@ const Login = () => {
         headers: {
           accept: 'application/json',
           'content-type': 'application/json',
-          'drgn-version': tauriConfig.package.version
+          'drgn-version': packageJson.version
         },
         body: JSON.stringify({
           email,
@@ -34,9 +34,6 @@ const Login = () => {
       })
 
       const data = await res.json()
-
-      console.log(res)
-
 
       if (res.status === 200) {
         setUser(data.user)

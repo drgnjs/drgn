@@ -1,0 +1,54 @@
+@import '../../theme'
+
+.wrapper
+  position: fixed
+  bottom: 20px
+  left: 20px
+  z-index: 99
+  cursor: pointer
+
+  img
+    width: 48px
+    border-radius: 50%
+
+
+.userMenu
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  flex-direction: column
+  gap: 2px 0
+
+  a, span
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    font-size: 15px
+    color: $textDark
+    opacity: .99
+    gap: 0 8px
+    padding: 3px 10px
+    border-radius: 5px
+    transition: color .3s, background .3s
+    width: calc(100% - 16px)
+    cursor: pointer
+
+    &:hover
+      background: $overlay
+      color: $text
+    
+    &:active
+      background: $overlay
+      color: $heading
+    
+    i
+      font-size: 20px
+    
+  .danger
+    color: $textRed
+
+    &:hover
+      color: $textRedHover
+    
+    &:active
+      color: $textRedHover

@@ -1,0 +1,63 @@
+@import '../../theme'
+
+%overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, .5)
+  z-index: 999999
+
+
+.overlay
+  @extend %overlay
+  display: none
+
+
+.overlayActive
+  @extend %overlay
+  display: block
+
+
+%popup
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  flex-direction: column
+  position: fixed
+  top: 50%
+  left: 50%
+  transition: .2s ease-in-out
+  z-index: 999999
+  height: auto
+  width: auto
+  min-width: calc(450px - 60px)
+  background: $surfaceSecondary
+  border-radius: 16px
+  padding: 30px
+
+
+.popup
+  @extend %popup
+  transform: translate(-50%, -50%) scale(0)
+
+
+.popupActive
+  @extend %popup
+  transform: translate(-50%, -50%) scale(1)
+
+
+.icon
+  position: absolute
+  z-index: 999999
+  top: 15px
+  right: 15px
+  font-size: 24px
+  color: $textDark
+  opacity: .99
+  transition: .3s
+  cursor: pointer
+
+  &:hover
+    color: $text

@@ -13,6 +13,8 @@
 - upgraded `@dicebear/avatars-identicon-sprites` to **4.10.3** in [#29](https://github.com/drgnjs/drgn/pull/29)
 - upgraded `@types/react` to **18.0.14** in [#30](https://github.com/drgnjs/drgn/pull/30)
 - upgraded `@dicebear/avatars` to **4.10.3** in [#31](https://github.com/drgnjs/drgn/pull/31)
+- upgraded `typescript` to **4.7.4** in [#32](https://github.com/drgnjs/drgn/pull/32)
+- upgraded `eslint` to **8.18.0** in [#33](https://github.com/drgnjs/drgn/pull/33)
 
 ## v1.0.13
 

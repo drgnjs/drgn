@@ -4,6 +4,7 @@
   "description": "A better SSH Client",
   "scripts": {
     "dev": "concurrently \"vite dev\" \"tauri dev\"",
+    "dev:api": "cd ../../code/!/drgn-api && npm run dev",
     "build": "vite build",
     "bundle": "tauri build",
     "lint": "eslint src --ext .ts,.tsx",

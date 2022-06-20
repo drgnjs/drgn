@@ -1,13 +1,10 @@
 import { appWindow } from '@tauri-apps/api/window'
-import logo from '../../assets/logo.svg'
 import Icon from '../Icon'
-import styles from './styles.module.scss'
+import styles from './styles.module.sass'
 
 const AppNavigation = () => {
   return (
     <div className={styles.container} data-tauri-drag-region>
-      <img className={styles.logo} src={logo} alt='drgn' />
-      
       <nav className={styles.navigation}>
         <li onClick={() => appWindow.minimize()}>
           <Icon name='minimize' />

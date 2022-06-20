@@ -14,7 +14,7 @@ body, html
   font-family: $font
   font-size: 16px
   color-scheme: dark
-  @include background(url('./assets/shape.svg'), $surface, bottom, left, cover)
+  background: $surface
 
 
 *
@@ -117,7 +117,7 @@ svg
 
  
 .tippy-box[data-animation=shift-away][data-state=hidden][data-placement^=right]
-  transform:translateX(-10px)
+  transform: translateX(-10px)
 
 
 .tippy-box[data-theme=menu]

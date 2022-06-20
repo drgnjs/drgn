@@ -1,0 +1,51 @@
+@import '../../theme'
+
+.container
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  position: fixed
+  z-index: 99
+  top: 0
+  right: 0
+  width: calc(100% - 30px)
+  height: 40px
+  padding: 0 15px
+
+
+.navigation
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  height: 100%
+
+  li
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 35px
+    height: 25px
+    transition: background .3s
+    border-radius: 4px
+    cursor: pointer
+
+    &:nth-child(1)
+      i
+        font-size: 24px
+        margin-bottom: 4px
+      
+    &:nth-child(2)
+      i
+        font-size: 18px
+      
+    &:hover
+      background: $overlay
+
+      i
+        color: $heading
+
+
+    i
+      color: $textDark
+      opacity: .99
+      transition: color .3s

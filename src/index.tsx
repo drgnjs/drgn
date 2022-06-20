@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
-import tauriConfig from '../src-tauri/tauri.conf.json'
-import styles from './app.module.scss'
+import packageJson from '../package.json'
+import styles from './app.module.sass'
 import AppNavigation from './components/AppNavigation'
 import UserContext from './contexts/UserContext'
 import Dashboard from './pages/Dashboard'
@@ -19,7 +19,9 @@ import '@fontsource/poppins/400-italic.css'
 import '@fortawesome/fontawesome-free/css/brands.css'
 import 'material-symbols/outlined.css'
 import 'material-symbols/rounded.css'
-import './index.scss'
+import './index.sass'
+import Preferences from './pages/Preferences'
+import UserMenu from './components/UserMenu'
 
 const App = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -40,13 +42,13 @@ const App = () => {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
-            'drgn-version': tauriConfig.package.version,
+            'drgn-version': packageJson.version,
             'authorization': `bearer ${token ?? window.localStorage.getItem('token')}`
           },
           body: JSON.stringify({
             // @ts-ignore
             os: window.navigator?.userAgentData?.platform || window.navigator?.platform || 'unknown',
-            version: tauriConfig.package.version
+            version: packageJson.version
           })
         })
       } catch (err) {
@@ -64,7 +66,7 @@ const App = () => {
         const res = await fetch((import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.drgnjs.com') + '/users/@me', {
           headers: {
             accept: 'application/json',
-            'drgn-version': tauriConfig.package.version,
+            'drgn-version': packageJson.version,
             'authorization': `bearer ${token ?? window.localStorage.getItem('token')}`
           }
         })
@@ -102,13 +104,20 @@ const App = () => {
         <div className={styles.app}>
           <AppNavigation />
 
-          <div className={styles.base}>
-            <Routes>
-              <Route path='login' element={<Login />} />
-              <Route path='register' element={<Register />} />
+          <div className={styles.baseWrapper}>
+            {user && <UserMenu />}
 
-              <Route path='dashboard' element={<Dashboard />} />
-            </Routes>
+            <div className={styles.baseBackground}>
+              <div className={styles.base}>
+                <Routes>
+                  <Route path='login' element={<Login />} />
+                  <Route path='register' element={<Register />} />
+
+                  <Route path='dashboard' element={<Dashboard />} />
+                  <Route path='preferences' element={<Preferences />} />
+                </Routes>
+              </div>
+            </div>
           </div>
         </div>
       </MemoryRouter>

@@ -1,3 +1,5 @@
+@import './theme'
+  
 .app
   display: flex
   align-items: center
@@ -6,6 +8,20 @@
   height: 100%
   width: 100%
 
+.baseWrapper
+  display: flex
+  height: 100%
+  width: 100%
+
+.baseBackground
+  height: 100%
+  flex: 1
+  @include background(url('./assets/shape.svg'), $surface, bottom, left, cover)
+  transform: scaleX(-1)
+  filter: FlipH
+
 .base
-  height: calc(100% - 40px)
+  transform: scaleX(-1)
+  filter: FlipH
+  height: 100%
   width: 100%

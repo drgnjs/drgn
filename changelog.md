@@ -4,8 +4,8 @@
 
 ### New Features
 
-- added server dashboard
-- added file manager
+- added ability to add servers
+- added basic foundation for the server dashboard
 
 ### Dependencies
 

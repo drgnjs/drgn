@@ -1,5 +1,14 @@
 # Changelog
 
+## Unpublished
+
+### Dependencies
+
+- upgraded `@typescript-eslint/eslint-plugin` to **5.29.0** in [#34](https://github.com/drgnjs/drgn/pull/34)
+- upgraded `@typescript-eslint/parser` to **5.29.0** in [#35](https://github.com/drgnjs/drgn/pull/35)
+- upgraded `sass` to **1.53.0** in [#36](https://github.com/drgnjs/drgn/pull/36)
+- upgraded `eslint-plugin-react` to **7.30.1** in [#37](https://github.com/drgnjs/drgn/pull/37)
+
 ## v1.1.1
 
 ### Bug Fixes

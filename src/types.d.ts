@@ -9,3 +9,17 @@ export type User = {
   createdAt: string
   updatedAt: string
 }
+
+export type Server = {
+  _id: string
+  user: string
+  credentials: {
+    host: string
+    port: number
+    username: string
+    password?: string
+    privateKey?: string
+  }
+  createdAt: string
+  updatedAt: string
+}

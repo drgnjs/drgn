@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.1.1
+
+### Bug Fixes
+
+- removed import of non-existent preferences page
+
+### Changes
+
+- formatted code *(fixed lint issues)*
+
 ## v1.1.0
 
 ### New Features

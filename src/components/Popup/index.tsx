@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import Icon from '../Icon'
 import Portal from '../Portal'
 import styles from './styles.module.sass'
-import type { ReactNode } from 'react'
+import type { ReactNode , Dispatch, SetStateAction} from 'react'
 
 const Popup = ({ content, children, isVisible, setVisibility, isVisibleByDefault, hideIcon }: {
   content: ReactNode,

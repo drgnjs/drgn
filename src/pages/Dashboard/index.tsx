@@ -1,13 +1,13 @@
-import { FormEvent, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
+import packageJson from '../../../package.json'
 import Button from '../../components/Button'
+import Loader from '../../components/Loader'
 import Popup from '../../components/Popup'
 import UserContext from '../../contexts/UserContext'
 import styles from './styles.module.sass'
-import packageJson from '../../../package.json'
-import { Server } from '../../types'
-import Loader from '../../components/Loader'
-import Tip from '../../components/Tip'
+import type { Server } from '../../types'
+import type { FormEvent} from 'react'
 
 const Dashboard = () => {
   const [loading, setLoading] = useState<boolean>(true)
@@ -155,7 +155,7 @@ const Dashboard = () => {
       ) : (
         <div className={styles.servers}>
           {servers.map((server, i) => (
-            <div className={styles.server}>
+            <div className={styles.server} key={i}>
               <h4>{server.credentials.host}<span>:{server.credentials.port}</span></h4>
             </div>
           ))}

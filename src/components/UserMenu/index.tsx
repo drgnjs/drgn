@@ -20,10 +20,12 @@ const UserMenu = () => {
     <Tip
       content={
         <div className={styles.userMenu}>
+          {/*
           <Link to='/preferences'>
             <Icon name='settings' filled />
             Preferences
           </Link>
+          */}
           <span className={styles.danger} onClick={logout}>
             <Icon name='logout' />
             Logout

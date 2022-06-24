@@ -4,6 +4,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import packageJson from '../package.json'
 import styles from './app.module.sass'
 import AppNavigation from './components/AppNavigation'
+import UserMenu from './components/UserMenu'
 import UserContext from './contexts/UserContext'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
@@ -20,8 +21,7 @@ import '@fortawesome/fontawesome-free/css/brands.css'
 import 'material-symbols/outlined.css'
 import 'material-symbols/rounded.css'
 import './index.sass'
-import Preferences from './pages/Preferences'
-import UserMenu from './components/UserMenu'
+// import Preferences from './pages/Preferences'
 
 const App = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -114,7 +114,7 @@ const App = () => {
                   <Route path='register' element={<Register />} />
 
                   <Route path='dashboard' element={<Dashboard />} />
-                  <Route path='preferences' element={<Preferences />} />
+                  {/* <Route path='preferences' element={<Preferences />} /> */}
                 </Routes>
               </div>
             </div>

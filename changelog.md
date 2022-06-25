@@ -1,6 +1,10 @@
 # Changelog
 
-## Unpublished
+## v1.1.2
+
+### Bug Fixes
+
+- removed `installMode` option for Windows
 
 ### Dependencies
 

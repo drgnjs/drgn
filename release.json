@@ -1,19 +1,19 @@
 {
-  "name": "v1.1.1",
-  "notes": "Read our changelog to learn more: https://drgnjs.com/changelog/v111",
-  "pub_date": "2022-06-24T20:16:53Z",
+  "name": "v1.1.2",
+  "notes": "Read our changelog to learn more: https://drgnjs.com/changelog/v112",
+  "pub_date": "2022-06-25T13:20:45Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVdHbUxIRGZJSnNPZTB2L2MzeGRjRE41cUJSRERRME53S1RkOGNOVG9odUtENVlNd3R4TFd5WDZFaHhETVBCL0JPaTRqbHFsNm1XS0YxWnVlMkZVVUFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTAxNjg0CWZpbGU6L1VzZXJzL3J1bm5lci93b3JrL2RyZ24vZHJnbi9zcmMtdGF1cmkvdGFyZ2V0L3JlbGVhc2UvYnVuZGxlL21hY29zL2RyZ24uYXBwLnRhci5negphZ1JhSXl3TkZoOWhBaExid2JMTG50RUhQcTdKN1lYaE91Zjd6Mzc3QldocFVVYm5KcDRpemNyRGFYUWFLU1VPRVFFMEttSGdPOFNHeVRnWUFiV2NDdz09Cg==",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.1/drgn.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVVOTWxGUTJUSmNzR0RGNDNZb2xWMVJ0SDRhdFlUN0xBYnFEZDB6dWtvRDVlZTlqOVhCTVRFeGFpS1BCYzQxaWtEY2Q2bkUxbzYxQzFIb2FiaC9OVFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTYyOTA3CWZpbGU6L1VzZXJzL3J1bm5lci93b3JrL2RyZ24vZHJnbi9zcmMtdGF1cmkvdGFyZ2V0L3JlbGVhc2UvYnVuZGxlL21hY29zL2RyZ24uYXBwLnRhci5negpxM3QrUUJyUW1ha2NHVG5OQjkzZFdnTzI5L1Rmb0JsaFY3SXN0WThmbno0OHZCWW1WYklSUDNMS2dtQ0NkaFZLUi9kT3dxUHpjVW1jdW1PcnFNaERDUT09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.2/drgn.app.tar.gz"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVVoUVZYdTlSOUtXZHE1eUZ2SlhIanI4cGdHWkFSbTJwYXZwdkxDUTZuSnpycDFSblJMTUNHOGpkMG4yWkQ1WFZZZzB6bFVUcitTYkE5WlIzM2s5ZlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTAxNjkwCWZpbGU6L2hvbWUvcnVubmVyL3dvcmsvZHJnbi9kcmduL3NyYy10YXVyaS90YXJnZXQvcmVsZWFzZS9idW5kbGUvYXBwaW1hZ2UvZHJnbl8xLjEuMV9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKUWgvUU9WQ1Q2dUliajhsRCtPaHpwYUpmRDJMWEtIbHBkRUt3S0dzRVBVMndJS3l0M1lxemwwbUtXRjI1ZlloVkp0MlRBZE9YbUhCTG1mUExMOEZYQXc9PQo=",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.1/drgn_1.1.1_amd64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVF4WjdLTjF3TmxQanpBTVVwc3h1dnZmUmNibXZJWUFVQVBWZXZhZm5xcDYvMTVoVUg5bjl4bDRGZVBDL2IyeS8yYXJENHVMQ01yU2VQRHhVR2RYRGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTYyOTk4CWZpbGU6L2hvbWUvcnVubmVyL3dvcmsvZHJnbi9kcmduL3NyYy10YXVyaS90YXJnZXQvcmVsZWFzZS9idW5kbGUvYXBwaW1hZ2UvZHJnbl8xLjEuMl9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKZjlSKytReWVIb2s3Uk5mNWhBMmhhdlRoWTFLcldObGd0Vjg4bFNOTXFaMUMxSGdUVXY2UlpoRmt0dW10ZDB5cDhjT2NEZmhkVU9BS2RyUUcvT2JSQlE9PQo=",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.2/drgn_1.1.2_amd64.AppImage.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVhxUkl2Skk5SXJXNUlNTTZpb0hpOFdzQ09yNUpBYlNQUUc2b2szYlo5cHJONjdNWmN2bTFXMmpvZjdPai9UUCtmdTZHWUNycW9jaldwbm1ickJlVHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTAxNzkwCWZpbGU6RDpcYVxkcmduXGRyZ25cc3JjLXRhdXJpXHRhcmdldFxyZWxlYXNlXGJ1bmRsZS9tc2kvZHJnbl8xLjEuMV94NjRfZW4tVVMubXNpLnppcAppd3M1ak91dFdhblRmYzBhckk4dGcwTC9IRnZKSHhJSHdvdzBwSHZVMFJvS1gyZnBjbVJFREFyaFZPQlkxb0pwN3RUUWRKMVE2VTY2YmMyaG0rZkhBdz09Cg==",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.1/drgn_1.1.1_x64_en-US.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVhjb0FuNVZLbm9RMVRTYko4SGtwQ2R4Uy9ubS9OekJYZnM2WHNleElWY2FmM2pHNmR6Y1MvLzVkblVsSndmdGdwS1JuUEJpaWlsc3MrRzdnblBra1FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2MTYzMjIxCWZpbGU6RDpcYVxkcmduXGRyZ25cc3JjLXRhdXJpXHRhcmdldFxyZWxlYXNlXGJ1bmRsZS9tc2kvZHJnbl8xLjEuMl94NjRfZW4tVVMubXNpLnppcAppSXdyTUZWQ3lyMXRjbEpxU3EwNUlCdE0zOUp0ZUxGcU1UVHg2V290UktrVStTNTkrZlFzRDJjUzY1c1JvMnhGOTM0TWtDUmFsYjI5Zm9nYUdFSHlDdz09Cg==",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.2/drgn_1.1.2_x64_en-US.msi.zip"
     }
   }
 }

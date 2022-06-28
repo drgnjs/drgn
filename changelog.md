@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.3
+
+### Dependencies
+
+- upgraded `@typescript-eslint/eslint-plugin` to **5.30.0** in [#39](https://github.com/drgnjs/drgn/pull/39)
+- upgraded `material-symbols` to **0.2.2** in [#40](https://github.com/drgnjs/drgn/pull/40)
+- upgraded `@typescript-eslint/parser` to **5.30.0** in [#41](https://github.com/drgnjs/drgn/pull/41)
+
 ## v1.1.2
 
 ### Bug Fixes

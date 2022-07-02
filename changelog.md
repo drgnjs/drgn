@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.1.4
+
+### Dependencies
+
+- upgraded `serde_json` to **1.0.82** in [#44](https://github.com/drgnjs/drgn/pull/44)
+- upgraded `@tauri-apps/cli` to **1.0.2** in [#46](https://github.com/drgnjs/drgn/pull/46)
+- upgraded `material-symbols` to **0.2.3** in [#47](https://github.com/drgnjs/drgn/pull/47)
+- upgraded `tauri-build` to **1.0.2** in [#48](https://github.com/drgnjs/drgn/pull/48)
+- upgraded `tauri` to **1.0.2** in [#49](https://github.com/drgnjs/drgn/pull/49)
+
 ## v1.1.3
 
 ### Dependencies

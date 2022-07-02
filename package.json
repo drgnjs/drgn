@@ -1,6 +1,6 @@
 {
   "name": "drgn",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A better SSH Client",
   "scripts": {
     "dev": "concurrently \"vite dev\" \"tauri dev\"",

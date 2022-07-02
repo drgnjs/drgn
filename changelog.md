@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.5
+
+### Bug Fixes
+
+- fixed app `identifier` specified in tauri.conf.json
+
 ## v1.1.4
 
 ### Dependencies

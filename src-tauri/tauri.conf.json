@@ -21,7 +21,7 @@
         "icons/icon.png",
         "icons/icon.icns"
       ],
-      "identifier": "Samuel Kopp",
+      "identifier": "com.drgnjs",
       "longDescription": "A modern SSH client built with web technologies.",
       "macOS": {
         "entitlements": null,

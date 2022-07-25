@@ -1,8 +1,10 @@
 # Changelog
 
-## v1.1.8
+## v1.1.9
 
-* test publishing
+### Bug Fixes
+
+* fix: publish workflow
 
 ## v1.1.5
 

@@ -1,19 +1,19 @@
 {
-  "name": "v1.1.5",
-  "notes": "Read our changelog to learn more: https://drgnjs.com/changelog/v115",
-  "pub_date": "2022-07-02T09:34:44Z",
+  "name": "v1.1.10",
+  "notes": "Read our changelog to learn more: https://drgnjs.com/changelog/v1110",
+  "pub_date": "2022-07-25T18:40:51Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNWJMazdoejdKRWhrYWU5eGNzc0FnZndYRkIrSUQwU2ZvZkNwM1J0YThUMDZodGltNXZtYnp2cWdpMWMwdTJtTE1GRXd2dkpERzkxOXpFL1Nkc2xWd1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2NzU0MjExCWZpbGU6ZHJnbi5hcHAudGFyLmd6Clg5cDVwakJLN0IzeDZTdm5nLzVCZ0NGeGNJTjJoWlFuMWdOTzRVTEdqa2tXMzRyQVNTekhTYmhYd2JSM1I5eFdtcXhvV2JRODlYVXVlZTBmY2d2b0RBPT0K",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.5/drgn.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNWFEeUpJODJxR3hDU1lmL1ZCWm9DbGhMUEVsQS9BNXJvK050eXBZNEM0TWo3M2Y2amlkbDZ6UE9UeWpYZURzNXRTa1RjSTM3SkZBWXVHRG1uSXRhRFFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU4Nzc0MTY4CWZpbGU6ZHJnbi5hcHAudGFyLmd6CmY1cmhqNlNvOGIvQUQvQk5GcnFXSWpTc0pZWXJNVENSdWRaODhJUGtFMzZCOHVJdjJuLzd3MWozWDRId1JMYzZJNjFvdDg5WmZkd1BLZXN4YW96NUNRPT0K",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.10/drgn.app.tar.gz"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVVqOXNOMCtjM1hjbkt1MmRUc0l0eUQ1L2RQL1dLUTRIbGFUSmhlaVRLOU9OT01KKzkwZTlVcE8yODI5TzFRYWJxT2RWY09zakwxTU92LytrMFBqOFFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2NzU0NDU5CWZpbGU6ZHJnbl8xLjEuNV9hbWQ2NC5BcHBJbWFnZS50YXIuZ3oKK3l0elBraktxa2RHQ29YakFwTjgwNGJuTUhBU3pEejQ1cU9PaHlHR0RTQ2svMFIydDZ2TEw0SEdud1ZVVTFmKy8rRmFIRjdoY3Z3OThaV2tjOVNaQlE9PQo=",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.5/drgn_1.1.5_amd64.AppImage.tar.gz"
+      "signature": "Not Found",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.10/drgn_1.1.10_amd64.AppImage.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTK2E5RDBZVjlxNVZYRFVIMTZZL1JtZjhFQkczWW9xZGY0aU5Hdkw4V0hyUjFhUUhqNFFDRWc5QnI4Qm9rWFZUVjBrSGV3N2tIbVBLSFRraHZUa0cwUGc2dVdMc3h0cEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjU2NzU0NDI4CWZpbGU6ZHJnbl8xLjEuNV94NjRfZW4tVVMubXNpLnppcAoyMEFYOVExaXRKYnFGQkJ5eHNpOWFWR2J4WU1DcUkzcW1QMXJaWk1HMHg0ckhETlk5ZjE4ZXF1ZUNHdUJEbldUVXpRb3FzM2FCOFdtUzZGWjRDZXNEdz09Cg==",
-      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.5/drgn_1.1.5_x64_en-US.msi.zip"
+      "signature": "Not Found",
+      "url": "https://github.com/drgnjs/drgn/releases/download/v1.1.10/drgn_1.1.10_x64_en-US.msi.zip"
     }
   }
 }

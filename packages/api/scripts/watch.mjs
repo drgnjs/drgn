@@ -7,9 +7,12 @@ await build({
   minify: true,
   watch: true,
   platform: 'node',
-  format: 'esm',
+  format: 'cjs',
   external: ['./node_modules/*'],
   outfile: 'dist/index.js',
+  loader: {
+    '.node': 'copy'
+  },
   define: {
     __encryptionKey: JSON.stringify(process.env.encryptionKey),
     __jwtSecret: JSON.stringify(process.env.jwtSecret),

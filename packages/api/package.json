@@ -39,7 +39,7 @@
     "@types/ms": "^0.7.31",
     "@types/node": "^18.0.3",
     "@types/ssh2": "^1.11.4",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.5",
     "concurrently": "^7.2.2",
     "esbuild": "^0.14.49",

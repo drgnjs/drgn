@@ -1,4 +1,6 @@
-src-tauri/target
+node_modules
+.env
+packages/app/src-tauri/target
 WixTools
 dist
 node_modules

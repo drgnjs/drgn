@@ -1,0 +1,9 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/dev",
+  "pipeline": {
+    "lint": {
+      "outputs": []
+    }
+  }
+}

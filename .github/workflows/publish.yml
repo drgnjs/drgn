@@ -140,10 +140,10 @@ jobs:
           VERSION: ${{ needs.create-release.outputs.version }}
           PUBLISHED_AT: ${{ needs.publish-release.outputs.published_at }}
         with:
-          script: |
+const json = await (await fetch('https://api.github.com/repos/drgnjs/drgn/git/trees/dev')).json()           script: |
             const fetch = require('node-fetch')
 
-            const json = await (await fetch('https://api.github.com/repos/drgnjs/drgn/git/trees/dev')).json() 
+            
 
             const macSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn.app.tar.gz.sig`)).text()
             const linuxSignature = await (await fetch(`https://github.com/drgnjs/drgn/releases/download/${process.env.VERSION}/drgn_${process.env.VERSION.replace('v', '')}_amd64.AppImage.tar.gz.sig`)).text()

@@ -9,7 +9,7 @@ updates:
     versioning-strategy: 'increase'
 
   - package-ecosystem: 'cargo'
-    directory: '/src-tauri'
+    directory: '/packages/app/src-tauri'
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 99

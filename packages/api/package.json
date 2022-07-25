@@ -20,7 +20,7 @@
     "@fastify/compress": "^6.1.0",
     "@fastify/cors": "^8.0.0",
     "@fastify/helmet": "^9.1.0",
-    "@fastify/jwt": "^6.2.1",
+    "@fastify/jwt": "^6.3.1",
     "@fastify/rate-limit": "^7.0.0",
     "@fastify/type-provider-typebox": "^2.1.0",
     "@sinclair/typebox": "^0.24.16",

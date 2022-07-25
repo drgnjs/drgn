@@ -19,6 +19,7 @@ import insightsSchema from './schemas/insights'
 import userSchema from './schemas/users'
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
 
+(async () => {
 /* ................ create server ................ */
 
 const api = fastify({
@@ -367,3 +368,4 @@ await api.listen({
 })
 
 console.log('API running!')
+})()

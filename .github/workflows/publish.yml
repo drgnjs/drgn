@@ -66,7 +66,7 @@ jobs:
         run: cd packages/api && npm ci
 
       - name: Build API
-        run: npm run build
+        run: cd packages/api && npm run build
         env:
           encryptionKey: ${{ secrets.ENCRYPTION_KEY }}
           jwtSecret: ${{ secrets.JWT_SECRET }}
@@ -119,7 +119,7 @@ jobs:
         run: cd packages/app && npm ci
       
       - name: Build Web
-        run: npm run build
+        run: cd packages/app && npm run build
 
       - name: Build App
         uses: tauri-apps/tauri-action@v0

@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.6
+
+* test publishing
+
 ## v1.1.5
 
 ### Bug Fixes

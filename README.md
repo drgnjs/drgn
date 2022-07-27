@@ -7,3 +7,10 @@
 > **We expect the stable release in August 2022.**
 >
 > **Please do not use it until v1.2.0 is out!**
+
+<hr>
+<div align='center'>
+  <h3>Chat with us</h3>
+  <a href='https://azury.dev/discord'><b>Join our Discord</b></a>
+</div>
+<hr>

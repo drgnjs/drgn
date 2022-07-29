@@ -17,7 +17,7 @@
     "@fastify/jwt": "^6.3.1",
     "@fastify/rate-limit": "^7.3.0",
     "@fastify/type-provider-typebox": "^2.1.0",
-    "@sinclair/typebox": "^0.24.21",
+    "@sinclair/typebox": "^0.24.22",
     "cachu": "^5.4.4",
     "dayjs": "^1.11.4",
     "fastify": "^4.3.0",
